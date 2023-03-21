@@ -14,5 +14,7 @@ urlpatterns = [
     path("delete_banner/<int:banner_id>", views.delete_banner, name="delete_banner"),
     path("create_about/", views.create_about, name="create_about"),
     path("update_about/<int:aboutus_id>", views.update_about, name="update_about"),
-
+    # =======================
+    path('signin/', views.signin, name='signin'),
+    path('logout/', views.signout, name='logout'),
 ]

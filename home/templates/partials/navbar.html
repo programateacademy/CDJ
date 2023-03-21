@@ -12,8 +12,13 @@
         <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
         <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
         <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
-        <li><a class="link nav-link white-text" href="{% url 'login:panel_admin' %}">Noticias</a></li>
         <li><a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
+          {% if user.is_authenticated %}
+          <li><a class="link nav-link white-text" href="{% url 'login:panel_admin' %}">Panel</a></li>
+          <li><a class="link nav-link white-text" href="{% url 'login:logout' %}">Cerrar sesión</a></li>
+          {% else %}
+          <li><a class="link nav-link white-text" href="{% url 'login:signin' %}">Iniciar sesión</a></li>
+          {% endif %}
           <ul id="dropdown1" class="dropdown-content aligned">
             {% for consejo in consejos %}
             {% if consejo.type_consejo == 'Local' %}

@@ -3,9 +3,11 @@ from .models import Post
 from .forms import PostForm, DocumentForm, BannerForm, AboutUsForm
 from home.models import Documents, Banner, Aboutus
 import os
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, logout, authenticate
 
 def panel_admin(request):
-    posts = Post.objects.all() 
+    posts = Post.objects.filter(user=request.user) 
     documents = Documents.objects.all()
     banners = Banner.objects.all()
     about = Aboutus.objects.all()
@@ -18,7 +20,9 @@ def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            new_post = form.save(commit=False)
+            new_post.user = request.user
+            new_post.save()
             return redirect('login:panel_admin')
         
     context={'form':form, "type_form": type_form}
@@ -129,10 +133,25 @@ def update_about(request,aboutus_id):
     context = {"form":form, "update": update, "type_form": type_form}
     return render(request,'post_form.html', context)
 
-    
+def signin(request):
+    if request.method == 'GET':
+        return render(request, 'signin.html', {
+            'form': AuthenticationForm
+        })
+    else:
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request, 'signin.html', {
+                'form': AuthenticationForm,
+                'error': 'Usuario o Contraseña es incorrecto'
+            })
+        else:
+            login(request, user)
+            return redirect('login:panel_admin')
 
-
-
+def signout(request):
+    logout(request)
+    return redirect('home')
 
 
     
