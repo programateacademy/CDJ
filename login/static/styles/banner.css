@@ -1,0 +1,38 @@
+.images_container{
+    margin: 3rem 0;
+}
+
+
+.banner_card img{
+    width: 320px;
+    height: 230px;
+}
+
+.banner_options a:first-child{
+    background: red;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    margin: 2rem 0 0;
+}
+
+.banner_flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner_card{
+    width: 320px;
+    height: 230px;
+    margin-bottom: 2rem;
+}
+
+.banner_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

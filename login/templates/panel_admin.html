@@ -1,0 +1,154 @@
+{% extends 'layout.html'%}
+
+{% load static %}
+{% block content %}
+
+<section class="news_container">
+
+    <div class="post_button">
+        <h2> Noticias </h2>
+        <a href="{% url 'login:create_post'%}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add Icon">
+        </a>
+    </div>
+
+    <div class="post_flex">
+        {% for post in posts %}
+        <div class="post_container">
+
+            <div class="post_card">
+                <h2> {{ post.title }} </h2>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                <p> {{ post.text | safe}}</p>
+            </div>
+
+            <div class="post_options">
+                <a href="{% url 'login:delete_post' post.id %}"> Eliminar</a>
+                <a href="{% url 'login:update_post' post.id %}"> Actualizar </a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</section>
+
+<section class="files_container">
+
+    <div class="document_button">
+        <h2>Documentos</h2>
+        <a href="{% url 'login:create_document' %}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add ICON">
+        </a>
+    </div>
+
+    <div class="document_flex">
+        {% for document in documents %}
+        <div class="document_container">
+
+            <div class="document_card">
+
+                <h2>{{document.title}}</h2>
+                <p> {{document.description | safe }}</p>
+                <p>{{document.date}}</p>
+                <a href="{{ document.pdf.url }}" target="_blank"> Ver documento </a>
+
+                {% with document.pdf.name as file_name %}
+                {% with file_name|slice:'-4:' as extension %}
+
+                {% if extension == 'docx' or extension == '.odt' %}
+                <img src="{% static 'images/doc.png' %}" alt="Docx Icon" class="extension_icon">
+                {% elif extension == '.pdf' %}
+                <img src="{% static 'images/pdf.png' %}" alt="PDF icon" class="extension_icon">
+                {% elif extension == 'xlsx' %}
+                <img src="{% static 'images/xls.png' %}" alt="Xlsx Icon" class="extension_icon">
+                {% else %}
+                <img src="{% static 'images/landing.png' %}" alt="Default Icon" class="extension_icon">
+
+                {% endif %}
+                {% endwith %}
+                {% endwith %}
+
+            </div>
+
+            <div class="document_options">
+                <a href="{% url 'login:delete_document' document.id %}"> Eliminar</a>
+            </div>
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+
+
+</section>
+
+<section class="images_container">
+
+    <div class="banner_button">
+        <h2>Banners</h2>
+        <a href="{% url 'login:create_banner' %}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add ICON">
+        </a>
+    </div>
+
+    <div class="banner_flex">
+        {% for banner in banners %}
+        <div class="banner_container">
+
+            <div class="banner_card">
+                <img src="{{ banner.image.url }}" alt="Banner Image">
+            </div>
+
+            <div class="banner_options">
+                <a href="{% url 'login:delete_banner' banner.id %}"> Eliminar</a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+
+</section>
+
+
+<section class="info_consejo_container">
+
+    <div class="about_button">
+        <h2>Info Consejo</h2>
+        <a href="{% url 'login:create_about' %}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add ICON">
+        </a>
+    </div>
+
+    <div class="about_flex">
+        {% for about in aboutus%}
+        <div class="about_card">
+            <div>
+                <h2>{{ about.name}}</h2>
+                <p>{{ about.description}}</p>
+            </div>
+
+            <img src="{{ about.image.url }}" alt=" Consejo Icon">
+        </div>
+
+        <div class="about_options">
+            <a href="{% url 'login:update_about' about.id %}">Actualizar</a>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

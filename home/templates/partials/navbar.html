@@ -1,0 +1,64 @@
+{% load static %}
+
+ <!-- Barra de navegacion  -->
+<div class="navbar-fixed">
+  <nav class="navbar-mi-color" role="navigation">
+    <div class="container">
+      <a id="logo-container" href="/" class="brand-logo">
+        <img class="logo" src="{% static 'images/logo.png' %}">
+      </a>
+      <a style="text-decoration: none;" href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a style="text-decoration: none;"  href="#" data-target="search-demo" class="sidenav-trigger right"><i class="material-icons">search</i></a><ul class="right hide-on-med-and-down" style="padding-top: 10px;">
+        <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
+        <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
+        <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
+        <li><a class="link nav-link white-text" href="{% url 'login:panel_admin' %}">Noticias</a></li>
+        <li><a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
+          <ul id="dropdown1" class="dropdown-content aligned">
+            {% for consejo in consejos %}
+            {% if consejo.type_consejo == 'Local' %}
+            <li><a class="white-text" href="#"  style="color: white; text-decoration: none;" >{{ consejo.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Search barra de navegacion  -->
+<ul id="search-demo" class="sidenav sidenav-close" style="width:200px">
+  <br>
+  <a style="text-decoration: none;"  class="white-text ">Consejos Locales:</a>
+  {% for consejo in consejos %}
+    {% if consejo.type_consejo == 'Local' %}
+    <li><a class="white-text nav-link" href="#">{{ consejo.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Sidenav Mobile  -->
+<ul id="mobile-demo" class="sidenav sidenav-close left" style="width:200px">
+  <br>
+  <li>
+    <a class="white-text nav-link" style="text-decoration: none;" href="#inicio">
+      <i class="material-icons icono white-text">home</i>Example
+    </a>
+  </li>
+  <li>
+    <a class="white-text nav-link" style="text-decoration: none;" href="#sobremi">
+      <i class="material-icons icono white-text">work</i>Example
+    </a>
+  </li>
+  <li>
+    <a class="white-text nav-link" style="text-decoration: none;" href="#proyectos">
+      <i class="material-icons icono white-text">layers</i>Example
+    </a>
+  </li>
+  <li>
+    <a class="white-text nav-link" style="text-decoration: none;" href="#conocimientos">
+      <i class="material-icons icono white-text">perm_media</i>Example
+    </a>
+  </li>
+</ul>

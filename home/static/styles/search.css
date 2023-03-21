@@ -1,0 +1,25 @@
+.input-group-text {
+  background-color: #565ece;
+  border-color: #565ece;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.searchTerm::placeholder {
+  color: white;
+}
+input[type=search]:valid {
+  color: white;
+}
+
+/* Style seacrh carrusel */
+
+.carousel .item {
+  margin: 10px;
+}
+ 
+.carousel{
+  height: 100%;}
+

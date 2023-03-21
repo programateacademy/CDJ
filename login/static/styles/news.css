@@ -1,0 +1,95 @@
+.form{
+    background: white;
+}
+
+.post_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    border-radius: 25px;
+    width: 280px;
+    height: 340px;
+}
+
+.post_card h2{
+    margin-top: 1rem;
+}
+
+.post_card img{
+    width: 250px;
+    height: 280px;
+}
+
+.post_button, .document_button, .banner_button, .about_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem 2rem;
+}
+
+.post_button a, .document_button a, .banner_button a, .about_button a{
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.post_button h2, .document_button h2, .banner_button h2, .about_button h2{
+    color: white;
+}
+
+.news_container{
+    margin: 3rem 0;
+}
+
+.post_options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_options a:first-child{
+    background: red;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    margin: 2rem 0 0;
+}
+
+.post_options a:last-child{
+    background: rgb(74, 148, 218);
+    padding: 10px;
+    border-radius: 25px;
+    color: black;
+    text-decoration: none;
+    margin: 1rem 0 0;
+}
+
+.post_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.post_delete form h2{
+    color: white;
+}
+
+.document_card{
+    background: white;
+}
+  

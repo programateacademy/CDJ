@@ -1,0 +1,43 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+{% if type_delete == 1 %}
+<div class="post_delete">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h2>¿Seguro que deseas eliminar "{{post.title}}"?</h5>
+        <input type="submit" value="Confirmar">
+        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+    </form>
+</div>
+{% endif %}
+
+
+{% if type_delete == 2 %}
+
+<div class="post_delete">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h2>¿Seguro que deseas eliminar "{{document.title}}"?</h5>
+        <input type="submit" value="Confirmar">
+        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+    </form>
+</div>
+
+{% endif %}
+
+{% if type_delete == 3%}
+
+<div class="post_delete">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h2>¿Seguro que deseas eliminar la imagen del Banner?</h5>
+        <input type="submit" value="Confirmar">
+        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+    </form>
+</div>
+
+{% endif %}
+
+{% endblock %}

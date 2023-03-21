@@ -1,0 +1,66 @@
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+.nav-link {
+   margin: 0 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+.logo{
+  width: 100px;
+  padding-bottom: 10px;
+}
+.link{
+  font-family: 'Poppins';
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+}
+.nav-link {
+  line-height: 1;
+  padding: 15px 10px;
+}
+ul.right {
+  margin-bottom: 20px;
+}
+.nav-link:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #ff00f2;
+}
+.sidenav-trigger {
+  color: #ffffff;
+} 
+.nav-item{
+  margin-top: 15px;
+}
+.navbar-mi-color {
+  background-color: #1A1D37;
+}
+.sidenav{
+  background-color: #1A1D37;
+}
+
+.dropdown-content{
+  background-color: #242849;
+}
+.nav-wrapper{
+  justify-content: center;
+  justify-items: center;
+}
+
+
+@media only screen and (max-width : 600px) {
+    .navbar-fixed .brand-logo img {
+      max-height: 100px;
+      padding-bottom: 0px;
+
+    }
+    .navbar-mi-color {
+        background-color: #1A1D37;
+        height: 65px;
+      }
+  }
