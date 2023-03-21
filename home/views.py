@@ -1,7 +1,8 @@
-from django.http import JsonResponse
+from django.http import Http404, JsonResponse
 from django.shortcuts import render
 from .models import Consejos
 from django.db.models import Q
+from login.models import Post
 
 # traer todos los consejos al home
 
@@ -28,3 +29,6 @@ def search_consejos(request):
     consejos = Consejos.objects.filter(name__icontains=query, type_consejo='Local')
     results = [{'name': c.name, 'logo': c.logo.url, 'description': c.description, 'email': c.email, 'type_consejo': c.type_consejo, 'user': c.user.username} for c in consejos]
     return JsonResponse({'results': results})
+
+
+

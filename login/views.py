@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm, DocumentForm, BannerForm, AboutUsForm
-from home.models import Documents, Banner, Aboutus
+from home.models import Documents, Banner, Aboutus, Consejos
 import os
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
@@ -22,6 +22,8 @@ def create_post(request):
         if form.is_valid():
             new_post = form.save(commit=False)
             new_post.user = request.user
+            consejo = Consejos.objects.get(user=request.user)
+            new_post.consejo = consejo
             new_post.save()
             return redirect('login:panel_admin')
         
