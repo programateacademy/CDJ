@@ -10,7 +10,7 @@ def panel_admin(request):
     posts = Post.objects.filter(user=request.user) 
     documents = Documents.objects.filter(user=request.user)
     banners = Banner.objects.filter(user=request.user)
-    about = Aboutus.objects.all()
+    about = Aboutus.objects.filter(user=request.user)
     context = {'posts':posts, 'documents': documents, 'banners': banners, 'aboutus': about}
     return render(request, 'panel_admin.html', context)
 
@@ -84,8 +84,8 @@ def delete_document(request,documents_id):
 
 def create_banner(request):
     form = BannerForm()
-    type_form = 4
-    quantity_banners = Banner.objects.count()
+    type_form = 3
+    quantity_banners = Banner.objects.filter(user=request.user).count()
     message = ""
     
     if quantity_banners == 1:
@@ -119,18 +119,29 @@ def delete_banner(request,banner_id):
 def create_about(request):
     form = AboutUsForm()
     type_form = 4
+    quantity_about = Aboutus.objects.filter(user=request.user).count()
+    message = ""
+
+    if quantity_about == 1:
+        message = "Solamente puede añadir una descripción del consejo"
+        context = {"form":form, "type_form": type_form, "message": message}
+        return render(request, 'post_form.html', context)
     
     if request.method == 'POST':
         form = AboutUsForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            new_about = form.save(commit=False)
+            new_about.user = request.user
+            consejo = Consejos.objects.get(user=request.user)
+            new_about.consejo = consejo
+            new_about.save()
             return redirect('login:panel_admin')
         
     context = {"form":form, "type_form": type_form}
     return render(request, 'post_form.html', context)
 
 def update_about(request,aboutus_id):
-    about = Aboutus.objects.get(id=aboutus_id)
+    about = Aboutus.objects.get(id=aboutus_id, user = request.user)
     form = AboutUsForm(instance=about)
     update = 4
     type_form = 4

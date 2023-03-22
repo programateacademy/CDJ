@@ -38,11 +38,18 @@
 
 <!-- Creación de Banners -->
 {% if type_form == 3%}
+
+{% if message %}
+
+<h2>{{message}}</h2>
+
+{% else %}
 <form method="POST" enctype="multipart/form-data" class="form">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit" class="btn btn-primary">Crear</button>
 </form>
+{% endif %}
 
 {% endif %}
 <!---->
@@ -56,11 +63,10 @@
 <h2>{{message}}</h2>
 
 {% else %}
-
 <form method="POST" enctype="multipart/form-data" class="form">
     {% csrf_token %}
     {{ form.as_p}}
-    
+
     {% if update == 4 %}
     <button type="submit" class="btn btn-primary">Actualizar</button>
 
@@ -70,7 +76,6 @@
 </form>
 
 {% endif %}
-
 
 {% endif %}
 <!---->
