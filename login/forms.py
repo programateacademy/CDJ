@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from .models import Post
-from home.models import Documents, Banner, Aboutus
+from home.models import Documents, Banner, Aboutus, Collaborators
 
 class PostForm(ModelForm):
     class Meta:
@@ -21,3 +21,8 @@ class AboutUsForm(ModelForm):
     class Meta:
         model = Aboutus
         fields = ['name', 'description', 'image']
+
+class CollaboratorForm(ModelForm):
+    class Meta:
+        model = Collaborators
+        fields = ['firstname', 'lastname', 'position', 'description', 'image', 'facebook', 'instagram', 'twitter']

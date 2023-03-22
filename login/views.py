@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post
-from .forms import PostForm, DocumentForm, BannerForm, AboutUsForm
-from home.models import Documents, Banner, Aboutus, Consejos
+from .forms import PostForm, DocumentForm, BannerForm, AboutUsForm, CollaboratorForm
+from home.models import Documents, Banner, Aboutus, Consejos, Collaborators
 import os
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
@@ -11,7 +11,8 @@ def panel_admin(request):
     documents = Documents.objects.filter(user=request.user)
     banners = Banner.objects.filter(user=request.user)
     about = Aboutus.objects.filter(user=request.user)
-    context = {'posts':posts, 'documents': documents, 'banners': banners, 'aboutus': about}
+    collaborators = Collaborators.objects.filter(user=request.user)
+    context = {'posts':posts, 'documents': documents, 'banners': banners, 'aboutus': about, 'collaborators': collaborators}
     return render(request, 'panel_admin.html', context)
 
 def create_post(request):
@@ -173,6 +174,22 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('home')
+
+def create_collaborator(request):
+    form = CollaboratorForm()
+    type_form = 5
+    if request.method == 'POST':
+        form = CollaboratorForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_collaborator = form.save(commit=False)
+            new_collaborator.user = request.user
+            consejo = Consejos.objects.get(user=request.user)
+            new_collaborator.consejo = consejo
+            new_collaborator.save()
+            return redirect('login:panel_admin')
+        
+    context={'form':form, "type_form": type_form}
+    return render(request, 'post_form.html', context)
 
 
     

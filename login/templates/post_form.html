@@ -80,4 +80,27 @@
 {% endif %}
 <!---->
 
+<!-- Creación de Colaborador -->
+
+{% if type_form == 5%}
+<form method="POST" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+
+    {% if update == 5 %}
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+
+    {% else %}
+    <button type="submit" class="btn btn-primary">Crear</button>
+    {% endif %}
+</form>
+{% endif %}
+
+
+
+<!---->
+
+
+
 {% endblock %}
