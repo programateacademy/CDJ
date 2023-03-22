@@ -16,35 +16,38 @@
 <div class="container">
   <div class="row">
     <div class="col">
-        <h2 class="title-consejos">CONSEJOS LOCALES</h2>
-        <hr class="special-line">
+        <div class="title-wrapper">
+            <h2 class="title-consejos">CONSEJOS LOCALES</h2>
+            <div class="special-line">    </div>
+        </div>
     </div>
-  </div>  
-<div class="mt-4">
-  <div id="my-search-container" class="input-group rounded input-group-sm">
-    <input type="search" id="search-box" class="searchTerm form-control rounded order-2" placeholder="Busca el consejo de tu localidad" aria-label="Search" aria-describedby="search-addon">
-    <span class="input-group-text border-0 order-1" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span>
   </div>
 </div>
 
-  
-  
-  
+<div class="wrap">
+  <div class="search">
+     <input type="text" id="search-box" class="searchTerm" placeholder="Busca el consejo de tu localidad">
+    <div class="searchButton">
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+</div>
+<br>
   <div class="carousel"  id="search-results">
   </div>
-
-</div>
 
 <!--Container consejos-->
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos" >NUESTRAS 8 CURELES ESPECIALES</h2>
-      <hr class="special-line">
+        <div class="title-wrapper">
+            <h2 class="title-consejos">NUESTRAS 8 CURULES ESPECIALES</h2>
+            <div class="special-line"></div>
+        </div>
     </div>
   </div>
+</div>
+  
   <div class="justify-content-center ">
     <div class="row mx-auto mb-4" >
       {% for consejo in consejos %}
@@ -72,7 +75,6 @@
       {% endfor %}
     </div>
   </div>
-</div>
 
 <br>
 
@@ -80,8 +82,10 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">EVENTOS Y NOTICIAS</h2>
-      <hr class="special-line">
+        <div class="title-wrapper">
+            <h2 class="title-consejos">EVENTOS Y NOTICIAS</h2>
+            <div class="special-line">    </div>
+        </div>
     </div>
   </div>
 </div>
