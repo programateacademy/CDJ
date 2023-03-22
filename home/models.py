@@ -30,13 +30,15 @@ class Aboutus(models.Model):
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
-
 class Collaborators (models.Model):
-    name = models.CharField(max_length=100)
+    firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
     description = models.TextField(max_length=500, blank=True)
     image = ImageField(upload_to="consejos/collaborators")
+    facebook = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
