@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-        <h2 class="title-consejos">Consejos locales</h2>
+        <h2 class="title-consejos">CONSEJOS LOCALES</h2>
         <hr class="special-line">
     </div>
   </div>  
@@ -41,7 +41,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos" >Nuestras 8 cureles especiales</h2>
+      <h2 class="title-consejos" >NUESTRAS 8 CURELES ESPECIALES</h2>
       <hr class="special-line">
     </div>
   </div>
@@ -54,14 +54,17 @@
           <div class="card-image waves-effect waves-block waves-light" max-width="100%">
             <img class="activator" src="{{ consejo.logo.url }}" alt="{{ consejo.name }} logo" max-width="100%" height="250px">
           </div>
-          <div class="card-content">
+          <div class="card-content grey lighten-3">
             <span class="card-title black-text text-darken-4">{{ consejo.name }} </span>
           </div>
           <div class="card-reveal">
-            <span class="card-title text-icons">{{ consejo.type_consejo }}<i class="material-icons right">close</i></span>
-            <p class="text-icons">{{ consejo.email }}</p>
+            <span class="card-title text-icons"><i class="material-icons right" style="color:purple">close</i></span>
+            <br>
             <p class="text-icons">{{ consejo.description }}</p>
-            <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
+            <p class="text-icons">{{ consejo.email }}</p>
+            <ul class="center-align">
+              <li><a class="text-href" href="#sabersobre-1">Saber más</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -73,14 +76,45 @@
 
 <br>
 
-<!Container eventos y noticias>
+<!--Container eventos y noticias-->
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">Eventos y noticias</h2>
+      <h2 class="title-consejos">EVENTOS Y NOTICIAS</h2>
       <hr class="special-line">
     </div>
   </div>
 </div>
+
+{% if latest_post %}
+<div class="news">
+  <img class="image_news"  src="{{ latest_post.image.url }}" alt="{{ latest_post.title }}">
+  <div class="title_news">
+    <p><a class="title-event-one" href="#sabersobre-1">{{ latest_post.title }}</a></p>
+  </div>
+</div>
+{% endif %}
+<br>
+<div class="justify-content-center">
+  <div class="row mx-auto mb-4 d-flex">
+    {% for post in all_posts %}
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3 flex-row">
+      <div class="card event h-100" id="{{ post.id }}">
+        <div class="card-image">
+          <img class="image-event" src="{{ post.image.url }}" alt="{{ post.title }}" max-width="100%" height="250px">
+          <a class="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content text-event d-none order-md-2">
+          <p class="text-icons">{{ post.text|safe|truncatechars_html:100 }}</p>
+        </div>
+        <div class="card-content title-event">
+          <span class="card-title event-title">{{ post.title|safe }}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
 
 {% endblock %}

@@ -23,3 +23,37 @@ input[type=search]:valid {
 .carousel{
   height: 100%;}
 
+
+
+.text-title-carrusel{
+  font-size: 20px;
+  color: blueviolet;
+  font-weight: 500px !important;
+}
+.text-description-carrusel{
+  font-size: 14px;
+  text-align: justify;
+
+}
+.text-email-carrusel{
+  font-size: 12px;
+}
+.text-href{
+  font-size: 14px;
+
+}
+.text-href{
+  color: #000000;
+  align-self: flex-start;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: 400ms all;
+  margin-right: 1rem;
+  background: #7e75c5;
+
+}
+.text-href:hover{
+  background: #9c27b0;
+  color: white;
+}

@@ -4,16 +4,13 @@
 
 {% block content %}
 
-<h1>Iniciar sesion</h1>
-
-{{error}}
-
-<form action="{% url 'login:signin' %}" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-
-    <button>Iniciar sesion</button>
-</form>
-
-{% endblock %}
-
+<div class="contenido-tab">
+    <!-- Iniciar Sesion -->
+    <form class="form-3" action="{% url 'login:signin' %}" method="POST">
+        <img class="login-img" src="{% static 'images/inicio.png' %}">
+        <div type="text"> {% csrf_token %}</div>
+        <label for="contraseña">{{form.as_p}}</label>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+ ​{% endblock %}
+</div>

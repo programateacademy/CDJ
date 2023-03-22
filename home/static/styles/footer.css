@@ -1,7 +1,6 @@
   /* Style foonter */
 
   .footer-years{
-    font-family: 'poppins';
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -9,11 +8,12 @@
   }
   .color-created{
     background-color:#7C7BBC;
+    }
+  .title-footer{
+    color: #E58EE7;
   }
-.title-footer{
-  color: #E58EE7;
-}
-.fab,.fas {
-  color: #E58EE7;
-  margin-right: 10px;
-}
+  .fab,.fas {
+    color: #E58EE7;
+    margin-right: 10px;
+  }
+  
