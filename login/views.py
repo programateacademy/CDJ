@@ -8,8 +8,8 @@ from django.contrib.auth import login, logout, authenticate
 
 def panel_admin(request):
     posts = Post.objects.filter(user=request.user) 
-    documents = Documents.objects.all()
-    banners = Banner.objects.all()
+    documents = Documents.objects.filter(user=request.user)
+    banners = Banner.objects.filter(user=request.user)
     about = Aboutus.objects.all()
     context = {'posts':posts, 'documents': documents, 'banners': banners, 'aboutus': about}
     return render(request, 'panel_admin.html', context)
@@ -31,7 +31,7 @@ def create_post(request):
     return render(request, 'post_form.html', context)
 
 def delete_post(request,post_id):
-    post = Post.objects.get(id=post_id)
+    post = Post.objects.get(id=post_id, user=request.user)
     type_delete = 1
     if request.method == 'POST':
         post.delete()
@@ -40,7 +40,7 @@ def delete_post(request,post_id):
     return render(request, 'delete.html', {'post': post, "type_delete": type_delete})
 
 def update_post(request,post_id):
-    post = Post.objects.get(id=post_id)
+    post = Post.objects.get(id=post_id, user = request.user)
     form = PostForm(instance=post)
     update = 1
     type_form = 1
@@ -61,7 +61,11 @@ def create_document(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            new_document = form.save(commit=False)
+            new_document.user = request.user
+            consejo = Consejos.objects.get(user=request.user)
+            new_document.consejo = consejo
+            new_document.save()
             return redirect('login:panel_admin')
         
     extension = os.path.splitext(str(request.FILES.get('pdf')))[1]
@@ -70,7 +74,7 @@ def create_document(request):
     return render(request, 'post_form.html', context)
 
 def delete_document(request,documents_id):
-    document = Documents.objects.get(id=documents_id)
+    document = Documents.objects.get(id=documents_id, user=request.user)
     type_delete = 2
     if request.method == 'POST':
         document.delete()
@@ -92,7 +96,11 @@ def create_banner(request):
     if request.method == 'POST':
         form = BannerForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            new_banner = form.save(commit=False)
+            new_banner.user = request.user
+            consejo = Consejos.objects.get(user=request.user)
+            new_banner.consejo = consejo
+            new_banner.save()
             return redirect('login:panel_admin')
             
     context = {"form":form, "type_form": type_form, "message": message}
@@ -100,7 +108,7 @@ def create_banner(request):
 
 
 def delete_banner(request,banner_id):
-    banner = Banner.objects.get(id=banner_id)
+    banner = Banner.objects.get(id=banner_id, user=request.user)
     type_delete = 3
     if request.method == 'POST':
         banner.delete()
