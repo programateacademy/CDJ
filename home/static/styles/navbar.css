@@ -74,8 +74,9 @@ margin-left: 10px;
 line-height: 1.5;
 word-wrap: break-word;
 }
-
-
+.icono-style {
+ margin-left: 20px !important;
+}
 @media only screen and (max-width : 600px) {
   .navbar-fixed .brand-logo img {
     max-height: 100px;

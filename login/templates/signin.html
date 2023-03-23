@@ -11,6 +11,7 @@
         <div type="text"> {% csrf_token %}</div>
         <label for="contraseña">{{form.as_p}}</label>
         <button type="submit">Iniciar sesión</button>
+        <p class="error-red">{{error}}</p>
       </form>
- ​{% endblock %}
-</div>
+</div> 
+​{% endblock %}

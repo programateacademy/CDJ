@@ -12,7 +12,12 @@ body {
   font-size: medium;
   font-weight: 300;
   font-style: normal;
+  flex-shrink: 0
 
+}
+html{
+  height: 100%;
+  margin: 0;
 }
 * {
 box-sizing: border-box;
@@ -20,6 +25,8 @@ margin: 0%;
 padding: 0px;
 border: 0px;
 }
+
+
 
 /* Style inicio */
 
@@ -63,7 +70,11 @@ font-weight: 350;
   
 
 }
-
+.card-title-text{
+  font-size: 20px;
+  color: aqua;
+  
+}
 .container-consejos{
 padding: 20px;
 }

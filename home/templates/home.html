@@ -58,7 +58,7 @@
             <img class="activator" src="{{ consejo.logo.url }}" alt="{{ consejo.name }} logo" max-width="100%" height="250px">
           </div>
           <div class="card-content grey lighten-3">
-            <span class="card-title black-text text-darken-4">{{ consejo.name }} </span>
+            <span class="card-title-text black-text text-darken-4">{{ consejo.name }} </span>
           </div>
           <div class="card-reveal">
             <span class="card-title text-icons"><i class="material-icons right" style="color:purple">close</i></span>
@@ -112,7 +112,7 @@
           <p class="text-icons">{{ post.text|safe|truncatechars_html:100 }}</p>
         </div>
         <div class="card-content title-event">
-          <span class="card-title event-title">{{ post.title|safe }}</span>
+          <span class="card-title-text event-title">{{ post.title|safe }}</span>
         </div>
       </div>
     </div>
