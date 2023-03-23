@@ -7,9 +7,9 @@
 <div class="container">
 
 <div class="container-consejos justify-content-center">
-    <div class="row">
-        <img src="{% static 'images/TW-10.png' %}" class="parallax">
-    </div>
+  <div class="row">
+    <img src="{% static 'images/TW-10.png' %}" class="parallax">
+  </div>
 </div>
 
 <!--Container buscador-->
@@ -32,9 +32,11 @@
     </div>
   </div>
 </div>
+
 <br>
-  <div class="carousel"  id="search-results">
-  </div>
+
+<div class="carousel"  id="search-results">
+</div>
 
 <!--Container consejos-->
 <div class="container">
@@ -76,8 +78,6 @@
     </div>
   </div>
 
-<br>
-
 <!--Container eventos y noticias-->
 <div class="container">
   <div class="row">
@@ -98,7 +98,9 @@
   </div>
 </div>
 {% endif %}
+
 <br>
+
 <div class="justify-content-center">
   <div class="row mx-auto mb-4 d-flex">
     {% for post in all_posts %}
