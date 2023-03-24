@@ -12,7 +12,7 @@ class AboutusAdmin(admin.ModelAdmin):
   
 @admin.register(Collaborators)
 class CollaboratorsAdmin (admin.ModelAdmin):
-    list_display = ('name','lastname', 'position','get_type_consejo' )
+    list_display = ('firstname','lastname', 'position','get_type_consejo' )
     
     def get_type_consejo(self,obj):
         return obj.consejo.name

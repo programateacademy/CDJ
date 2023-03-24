@@ -40,4 +40,17 @@
 
 {% endif %}
 
+{% if type_delete == 5%}
+
+<div class="post_delete">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h2>¿Seguro que deseas eliminar {{ collaborator.firstname }} {{collaborator.lastname}}?</h5>
+        <input type="submit" value="Confirmar">
+        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+    </form>
+</div>
+
+{% endif %}
+
 {% endblock %}
