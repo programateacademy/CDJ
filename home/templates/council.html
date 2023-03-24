@@ -111,11 +111,13 @@
 </div>
 <!----------- Noticia grande ------------>
 <div class="container">
+  {% if latest_post %}
   <div class="council_title_news">
     <img class="council_image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
     <p>{{ latest_post.title }}</p>
     <p>{{ latest_post.contenido.text | safe }}</p>
   </div>
+  {% endif %}
 </div>
 
 

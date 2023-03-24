@@ -9,7 +9,11 @@ from login.models import Post
 def home(request):
     consejos = Consejos.objects.all()
     latest_post = Post.objects.last() 
-    all_posts = Post.objects.exclude(id=latest_post.id)
+    if latest_post:
+        all_posts = Post.objects.exclude(id=latest_post.id)
+    else:
+        all_posts = []
+        latest_post = []
     context = {'consejos': consejos, 'latest_post': latest_post, 'all_posts': all_posts}
     return render(request, 'home.html', context)
 
@@ -43,7 +47,14 @@ def detalle_consejo(request, consejo_id):
         aboutus = Aboutus.objects.filter(consejo=consejo).first()
         all_posts = Post.objects.filter(consejo=consejo)
         latest_post = all_posts.last()
-        all_posts = all_posts.exclude(id=latest_post.id)
+
+        if latest_post:
+            all_posts = all_posts.exclude(id=latest_post.id)
+        else:
+            all_posts = []
+            latest_post=[]
+    
+
     except Consejos.DoesNotExist:
         raise Http404("El consejo no existe")
     return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'document': document,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
