@@ -3,9 +3,9 @@
 {% block content %}
 
 
-<!-- Creación de Post  -->
+<!-- Creación de Post -->
 {% if type_form == 1%}
-<form method="POST" enctype="multipart/form-data" class="form">
+<form method="POST" enctype="multipart/form-data" class="form_create">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
@@ -25,7 +25,7 @@
 <!-- Creación de Documentos -->
 {% if type_form == 2%}
 
-<form method="POST" enctype="multipart/form-data" class="form">
+<form method="POST" enctype="multipart/form-data" class="form_create">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit" class="btn btn-primary">Crear</button>
@@ -38,7 +38,7 @@
 
 <!-- Creación de Banners -->
 {% if type_form == 3%}
-<form method="POST" enctype="multipart/form-data" class="form">
+<form method="POST" enctype="multipart/form-data" class="form_create">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit" class="btn btn-primary">Crear</button>
@@ -57,7 +57,7 @@
 
 {% else %}
 
-<form method="POST" enctype="multipart/form-data" class="form">
+<form method="POST" enctype="multipart/form-data" class="form_create">
     {% csrf_token %}
     {{ form.as_p}}
     
