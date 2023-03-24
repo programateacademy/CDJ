@@ -21,21 +21,26 @@ class Consejos(models.Model):
 class Banner(models.Model):
     image = ImageField(upload_to="consejos/banners")
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
 class Aboutus(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, blank=True)
     image = ImageField(upload_to="consejos/aboutus")
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
-
+    user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
 class Collaborators (models.Model):
-    name = models.CharField(max_length=100)
+    firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
     description = models.TextField(max_length=500, blank=True)
     image = ImageField(upload_to="consejos/collaborators")
+    facebook = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
 class Documents (models.Model):
     title = models.CharField(max_length=100)
@@ -43,6 +48,7 @@ class Documents (models.Model):
     description = models.TextField(max_length=500, blank=True)
     date = models.DateTimeField()
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 
     def save (self, *args, **kwargs):
         if not self .id:
