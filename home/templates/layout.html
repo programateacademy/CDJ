@@ -17,6 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="{% static 'styles/home.css' %}">
     <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
@@ -26,6 +27,8 @@
     <link rel="stylesheet" href="{% static 'styles/documents.css'%}">
     <link rel="stylesheet" href="{% static 'styles/banner.css'%}">
     <link rel="stylesheet" href="{% static 'styles/about.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/eventos.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/signin.css'%}">
     <link rel="stylesheet" href="{% static 'styles/collaborator.css'%}">
     <title>CDJ</title>
 </head>
@@ -34,7 +37,7 @@
     <!-- navbar  -->
     {% include 'partials/navbar.html' %}
     <!-- contenido -->
-    <div class="conenido">
+    <div class="contenido">
         {% block content %}
         {% endblock %}
     </div>
@@ -46,9 +49,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/1234567890.js"></script>
 
     <script src="{% static 'js/navbar.js' %}"></script>
     <script src="{% static 'js/search.js' %}"></script>
     <script src="{% static 'js/news_button_add.js' %}" ></script>
+    <script src="{% static 'js/eventos.js' %}" ></script>
+
 </body>
+
 </html>

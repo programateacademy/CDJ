@@ -8,7 +8,10 @@ from login.models import Post
 
 def home(request):
     consejos = Consejos.objects.all()
-    return render(request, 'home.html', {'consejos': consejos})
+    latest_post = Post.objects.last() 
+    all_posts = Post.objects.exclude(id=latest_post.id)
+    context = {'consejos': consejos, 'latest_post': latest_post, 'all_posts': all_posts}
+    return render(request, 'home.html', context)
 
 # Traer solo los curules especiales
 
@@ -27,8 +30,6 @@ def consejos_locales(request):
 def search_consejos(request):
     query = request.GET.get('q', '')
     consejos = Consejos.objects.filter(name__icontains=query, type_consejo='Local')
-    results = [{'name': c.name, 'logo': c.logo.url, 'description': c.description, 'email': c.email, 'type_consejo': c.type_consejo, 'user': c.user.username} for c in consejos]
+    results = [{'name': c.name, 'logo': c.logo.url, 'description': c.description, 'email': c.email, 'type_consejo': c.type_consejo} for c in consejos]
     return JsonResponse({'results': results})
-
-
 

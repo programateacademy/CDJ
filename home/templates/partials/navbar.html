@@ -12,20 +12,24 @@
         <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
         <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
         <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
-        <li><a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
+        <li>
+          <a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
+          <ul id="dropdown1" class="nav-link dropdown-content aligned"  style="width:200px">
+            {% for consejo in consejos %}
+            {% if consejo.type_consejo == 'Local' %}
+              <li>
+                <a  class="white-text" href="#" style="color: white; text-decoration: none;">{{ consejo.name }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}          
+          </ul>
+        </li>   
           {% if user.is_authenticated %}
           <li><a class="link nav-link white-text" href="{% url 'login:panel_admin' %}">Panel</a></li>
           <li><a class="link nav-link white-text" href="{% url 'login:logout' %}">Cerrar sesión</a></li>
           {% else %}
           <li><a class="link nav-link white-text" href="{% url 'login:signin' %}">Iniciar sesión</a></li>
           {% endif %}
-          <ul id="dropdown1" class="dropdown-content aligned">
-            {% for consejo in consejos %}
-            {% if consejo.type_consejo == 'Local' %}
-            <li><a class="white-text" href="#"  style="color: white; text-decoration: none;" >{{ consejo.name }}</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
         </li>
       </ul>
     </div>
@@ -33,37 +37,53 @@
 </div>
 
 <!-- Search barra de navegacion  -->
-<ul id="search-demo" class="sidenav sidenav-close" style="width:200px">
+<ul id="search-demo" class="sidenav sidenav-close left" >
   <br>
-  <a style="text-decoration: none;"  class="white-text ">Consejos Locales:</a>
+  <a style="text-decoration: none; max-width: 100%;" class="white-text title-sidevar">Consejos Locales:</a>
   {% for consejo in consejos %}
     {% if consejo.type_consejo == 'Local' %}
-    <li><a class="white-text nav-link" href="#">{{ consejo.name }}</a></li>
+    <div class="nav-text">
+    <li><a class="white-text nav-link-sidevar" href="#">{{ consejo.name }}</a></li>
     {% endif %}
+  </div>
   {% endfor %}
 </ul>
 
 <!-- Sidenav Mobile  -->
-<ul id="mobile-demo" class="sidenav sidenav-close left" style="width:200px">
+<ul id="mobile-demo" class="sidenav sidenav-close left">
   <br>
   <li>
-    <a class="white-text nav-link" style="text-decoration: none;" href="#inicio">
-      <i class="material-icons icono white-text">home</i>Example
-    </a>
+    <div class="nav-icon">
+      <i class="material-icons  icono-style  icono white-text">home</i>
+    </div>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="#inicio">ExampleExample</a>
+    </div>
   </li>
   <li>
-    <a class="white-text nav-link" style="text-decoration: none;" href="#sobremi">
-      <i class="material-icons icono white-text">work</i>Example
-    </a>
+    <div class="nav-icon">
+      <i class="material-icons icono-style icono white-text">work</i>
+    </div>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="#sobremi">Example</a>
+    </div>
   </li>
   <li>
-    <a class="white-text nav-link" style="text-decoration: none;" href="#proyectos">
-      <i class="material-icons icono white-text">layers</i>Example
-    </a>
+    <div class="nav-icon">
+      <i class="material-icons  icono-style  icono white-text">layers</i>
+    </div>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="#proyectos">Example</a>
+    </div>
   </li>
   <li>
-    <a class="white-text nav-link" style="text-decoration: none;" href="#conocimientos">
-      <i class="material-icons icono white-text">perm_media</i>Example
-    </a>
+    <div class="nav-icon">
+      <i class="material-icons icono-style  icono white-text">perm_media</i>
+    </div>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="#conocimientos">Example</a>
+    </div>
   </li>
 </ul>
+
+

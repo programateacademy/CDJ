@@ -4,20 +4,23 @@ let allCards = [];
 
 function createCard(result) {
   const card = `
-    <div class="container justify-content-center " style="height: 100%;">
-      <div class="card hoverable  white card-item">
-        <div class="card-image  waves-effect waves-block waves-light" style=max-width="100%">
-          <img class="activator" src="${result.logo}" alt="${result.name} logo" max-width="100%" height="250px">
-        </div>
-        <div class="card-reveal">
-          <span class="card-title brown-text text-darken-2">${result.name}<i class="material-icons activator right">close</i></span>
-          <p class="text-icons">${result.type_consejo}</p>
-          <p class="text-icons">${result.email}</p>
-          <p class="text-icons">${result.description}</p>
-          <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
-        </div>
-      </div>
+  <div class="container justify-content-center" style="height: 100%;">
+  <div class="card hoverable white card-item">
+    <div class="card-image waves-effect waves-block waves-light" style="max-width:100%">
+      <img class="activator" src="${result.logo}" alt="${result.name} logo" max-width="100%" height="250px">
     </div>
+    <div class="card-reveal">
+      <span class="card-title text-icons"><i class="material-icons right" style="color:purple">close</i></span>
+      <br>
+      <p class="text-title-carrusel">${result.name}</p>
+      <p class="text-description-carrusel">${result.description.slice(0, 100)}</p>
+      <p class="text-email-carrusel ">${result.email}</p>
+      <ul class="center-align">
+        <li><a class="text-href" href="#sabersobre-1">Saber más</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
   `;
   const item = document.createElement('div');
   item.classList.add('item');
@@ -93,8 +96,8 @@ function showSearchResults(results) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {
