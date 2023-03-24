@@ -192,5 +192,30 @@ def create_collaborator(request):
     return render(request, 'post_form.html', context)
 
 
+def delete_collaborator(request,collaborators_id):
+    collaborator = Collaborators.objects.get(id=collaborators_id, user=request.user)
+    type_delete = 5
+    if request.method == 'POST':
+        collaborator.delete()
+        return redirect('login:panel_admin')
+    
+    return render(request, 'delete.html', {'collaborator': collaborator, "type_delete": type_delete})
+
+
+def update_collaborator(request,collaborators_id):
+    collaborator = Collaborators.objects.get(id=collaborators_id, user = request.user)
+    form = CollaboratorForm(instance=collaborator)
+    update = 5
+    type_form = 5
+    
+    if request.method == 'POST':
+        form = CollaboratorForm(request.POST, request.FILES, instance = collaborator)
+        form.save()
+        return redirect('login:panel_admin')
+
+    context = {"form":form, "update":update, "type_form": type_form}
+    return render(request,'post_form.html', context)
+
+
     
 

@@ -15,6 +15,8 @@ urlpatterns = [
     path("create_about/", views.create_about, name="create_about"),
     path("update_about/<int:aboutus_id>", views.update_about, name="update_about"),
     path("create_collaborator/", views.create_collaborator, name="create_collaborator"),
+    path("delete_collaborator/<int:collaborators_id>", views.delete_collaborator, name="delete_collaborator"),
+    path("update_collaborator/<int:collaborators_id>", views.update_collaborator, name="update_collaborator"),
     # =======================
     path('signin/', views.signin, name='signin'),
     path('logout/', views.signout, name='logout'),
