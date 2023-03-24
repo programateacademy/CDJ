@@ -1,3 +1,9 @@
+.line_news{
+    flex: 1;
+    border-top: 2px solid fuchsia;
+    margin-right: -7.5%;
+} 
+
 .form{
     background: white;
 }
@@ -14,12 +20,22 @@
 }
 
 .post_card h2{
-    margin-top: 1rem;
+    margin: 10px 12px;
+    text-align: left;
+    font-size: 24px;
 }
 
 .post_card img{
-    width: 250px;
-    height: 280px;
+    max-width: 100%;
+    height: auto;
+    padding-right: 10px; 
+    padding-left: 10px; 
+}
+
+.post_card p{
+    padding-right: 10px; 
+    padding-left: 10px; 
+    font-size: 12px;
 }
 
 .post_button, .document_button, .banner_button, .about_button, .collaborators_button{
@@ -27,19 +43,23 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 1rem 2rem;
+    
 }
 
-.post_button a, .document_button a, .banner_button a, .about_button a, .collaborators_button a{
-    background: white;
-    color: black;
-    padding: 10px;
+.post_button a, .document_button a, .banner_button a, .about_button a{
+    background: #9CFF63;
+    color: #192058;
+    padding: 10px 16px;
     border-radius: 25px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -120px;
 }
 
 .post_button h2, .document_button h2, .banner_button h2, .about_button h2, .collaborators_button h2{
     color: white;
+    margin-right: 25px;
 }
 
 .news_container{
@@ -51,24 +71,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 24px;
+    font-size: 18px;
 }
 
-.post_options a:first-child{
-    background: red;
-    padding: 10px;
+.post_button i{
+    color: #192058;
+    font-size: 28px;
+    vertical-align: middle;
+}
+
+.post_options a:nth-child(1) {
+    background: rgb(223, 55, 55);
+    padding: 10px 20px;
     border-radius: 25px;
     color: white;
     text-decoration: none;
     margin: 2rem 0 0;
+    font-weight: 500;
 }
 
-.post_options a:last-child{
+.post_options a:nth-child(1):hover {
+    background: red;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.post_options a:nth-child(2) {
     background: rgb(74, 148, 218);
-    padding: 10px;
+    padding: 10px 24px;
     border-radius: 25px;
-    color: black;
+    color: #192058;
     text-decoration: none;
     margin: 1rem 0 0;
+    font-weight: 500;
+}
+
+.post_options a:nth-child(2):hover {
+    background: white;
+    color: rgb(74, 148, 218);
+    border: 2px solid rgb(74, 148, 218);
+    transition: all 0.3s ease-in-out;
 }
 
 .post_container{
@@ -79,6 +122,7 @@
 }
 
 .post_flex{
+    margin-top: 90px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -92,4 +136,5 @@
 .document_card{
     background: white;
 }
-  
+
+

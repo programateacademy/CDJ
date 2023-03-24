@@ -1,18 +1,32 @@
+.line_banner{
+    flex: 1;
+    border-top: 2px solid fuchsia;
+    margin-right: -7.5%;
+}
+
+.banner_button i{
+    color: #192058;
+    font-size: 28px;
+    vertical-align: middle;
+}
+
 .images_container{
     margin: 3rem 0;
 }
 
-
 .banner_card img{
-    width: 320px;
-    height: 230px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .banner_options a:first-child{
     background: red;
-    padding: 10px;
+    padding: 10px 24px;
     border-radius: 25px;
     color: white;
+    font-weight: 500;
+    font-size: 16;
     text-decoration: none;
     margin: 2rem 0 0;
 }
@@ -27,7 +41,7 @@
 .banner_card{
     width: 320px;
     height: 230px;
-    margin-bottom: 2rem;
+    margin-top: 12px;
 }
 
 .banner_container{
@@ -36,3 +50,4 @@
     align-items: center;
     flex-direction: column;
 }
+

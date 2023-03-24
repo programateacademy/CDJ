@@ -6,9 +6,9 @@
 <div class="post_delete">
     <form method="POST" action="">
         {% csrf_token %}
-        <h2>¿Seguro que deseas eliminar "{{post.title}}"?</h5>
-        <input type="submit" value="Confirmar">
-        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+        <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar "{{post.title}}"?</h5>
+        <input type="submit" value="Sí, eliminar" class="btn_delete">
+        <a type="buttom" href="{% url 'login:panel_admin' %} ">Regresar</a>
     </form>
 </div>
 {% endif %}
@@ -19,8 +19,8 @@
 <div class="post_delete">
     <form method="POST" action="">
         {% csrf_token %}
-        <h2>¿Seguro que deseas eliminar "{{document.title}}"?</h5>
-        <input type="submit" value="Confirmar">
+        <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar "{{document.title}}"?</h5>
+            <input type="submit" value="Sí, eliminar" class="btn_delete">
         <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
@@ -32,8 +32,8 @@
 <div class="post_delete">
     <form method="POST" action="">
         {% csrf_token %}
-        <h2>¿Seguro que deseas eliminar la imagen del Banner?</h5>
-        <input type="submit" value="Confirmar">
+        <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar la imagen del Banner?</h5>
+            <input type="submit" value="Sí, eliminar" class="btn_delete">
         <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
