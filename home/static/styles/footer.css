@@ -1,19 +1,33 @@
   /* Style foonter */
 
-  .footer-years{
-    font-family: 'poppins';
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-    margin: 0%;
-  }
   .color-created{
     background-color:#7C7BBC;
+    }
+  .title-footer{
+    color: #E58EE7;
   }
-.title-footer{
-  color: #E58EE7;
-}
-.fab,.fas {
-  color: #E58EE7;
-  margin-right: 10px;
-}
+  .fab,.fas {
+    color: #E58EE7;
+    margin-right: 10px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .col-md-4 {
+    margin-bottom: 30px;
+  }
+  footer {
+    margin-top: auto;
+    background-color: #0f101f;    
+    padding: 50px 0;
+
+  }
+  .footer-years{
+ font-size: 18px;
+ margin-top: 10px;
+ font-weight: 800;
+ color: black;
+  }

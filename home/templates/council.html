@@ -1,0 +1,151 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--Container de Banner-->
+<div class="container">
+  <div class="container-consejos justify-content-center">
+    <div class="row">
+      {% for banner in consejo.banner_set.all %}
+      <img src="{{ banner.image.url }}" alt="{{ consejo.name }} banner" class="parallax">
+      {% empty %}
+      <p>No se encontraron banners para este Consejo.</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!--Container de Conócenos-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="title-consejos">¡CONÓCENOS! </h2>
+      <hr class="special-line">
+      <div class="text-white">
+        <h2>{{ aboutus.name }}</h2>
+      </div>
+      <div class="aboutus">
+        <p class="aboutusdescription">{{ aboutus.description }}</p>
+        <div>
+          <img class="aboutusimage" src="{{ aboutus.image.url }}" alt="{{ consejo.name }} aboutus">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<!--CONTAINER DE COLABORADORES-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="title-consejos">COLABORADORES ACTIVOS </h2>
+      <hr class="special-line">
+    </div>
+  </div>
+</div>
+
+<!--PERFIL DEL COLABORADOR-->
+<div class="container_colab">
+  {% for collaborator in collaborators %}
+  <div class="card">
+    <div class="face face1">
+      <div class="content">
+        <img class=collaborator_image src="{{ collaborator.image.url }}">
+        <div>
+          <h3>{{ collaborator.firstname }} {{ collaborator.lastname }}</h3>
+          <p>{{ collaborator.position }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="face face2">
+      <div class="content">
+        <p>{{ collaborator.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!--CONTAINER DE ACTAS Y DOCUMENTOS -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="title-consejos"> ACTAS Y DOCUMENTOS </h2>
+      <hr class="special-line">
+    </div>
+  </div>
+</div>
+<!--- CAJA DE ACTAS Y DOCUMENTOS -->
+<div class="container">
+  <div class="justify-content-center ">
+    <div class="row mx-auto mb-4">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
+        <div class="card hoverable white">
+          <div class="card-image waves-effect waves-block waves-light" max-width="100%">
+            <img class="activator" src="{{ consejo.logo.url }}" alt="{{ document.title }} " max-width="100%"
+              height="250px">
+          </div>
+          <div class="card-content">
+            <span class="card-title black-text text-darken-4">{{ document.title }} </span>
+          </div>
+          <div class="card-reveal">
+            <li><a class="blue-text" href="{% url 'detalle_consejo_local' consejo.id %}">Saber más</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!----------- Noticias y Eventos ------------>
+<div class="container news_big">
+  <div class="row">
+    <div class="col">
+      <h2 class="title-consejos"> EVENTOS Y NOTICIAS </h2>
+      <hr class="special-line">
+    </div>
+  </div>
+</div>
+<!----------- Noticia grande ------------>
+<div class="container">
+  <div class="council_title_news">
+    <img class="council_image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
+    <p>{{ latest_post.title }}</p>
+    <p>{{ latest_post.contenido.text | safe }}</p>
+  </div>
+</div>
+
+
+<!----------- Noticias pequeñas------------>
+<div class="container">
+  <div class="justify-content-center ">
+    {% for post in all_posts %}
+    <div class="row mx-auto mb-4">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" max-width="100%" height="250px">
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          </div>
+          <div class="card-content">
+            <span class="card-title">{{ post.title|safe }}</span>
+            <p class="text-icons">{{ post.text|safe|truncatewords_html:30 }}</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title text-icons">{{ consejo.type_consejo }}<i
+                class="material-icons right">close</i></span>
+            <p class="text-icons">{{ post.text|safe|truncatewords_html:30 }}</p>
+            <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

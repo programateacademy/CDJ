@@ -38,7 +38,7 @@
     font-size: 12px;
 }
 
-.post_button, .document_button, .banner_button, .about_button{
+.post_button, .document_button, .banner_button, .about_button, .collaborators_button{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@
     margin-bottom: -120px;
 }
 
-.post_button h2, .document_button h2, .banner_button h2, .about_button h2{
+.post_button h2, .document_button h2, .banner_button h2, .about_button h2, .collaborators_button h2{
     color: white;
     margin-right: 25px;
 }

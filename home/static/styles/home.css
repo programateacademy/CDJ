@@ -2,66 +2,116 @@
 /* Style General */
 
 body {
-    background: #192058;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  background: #192058;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  font-size: medium;
+  font-weight: 400;
+  font-style: normal;
+  flex-shrink: 0
+
+}
+html{
+  height: 100%;
+  margin: 0;
 }
 * {
-  box-sizing: border-box;
-  margin: 0%;
-  padding: 0px;
-  border: 0px;
+box-sizing: border-box;
+margin: 0%;
+padding: 0px;
+border: 0px;
 }
-  
-  /* Style inicio */
+
+
+
+/* Style inicio */
 
 .home{
-  margin-top: 2REM;
+margin-top: 2REM;
 }
 
 
-  /* Style consejos */
 
-.special-line {
-  width: 100%;
-  margin-left: auto;
-  border-top: 4px solid #ff00ea;
-  box-shadow: none;
-}
+  /* Style title and hr */
+
+  .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title-consejos {
+    text-align: left;
+  }
+  
+  .special-line {
+    flex-grow: 1;
+    margin-left: 20px;
+    border: none;
+    border-top: 4px solid #FC45FF!important;
+  }
+  
+  
+  
+  
+  /* Style consejos and all acard */
 
 .title-consejos{
-  color: #ffffff;
-  font-family: 'poppins';
-  font-style: normal;
-  font-size: 26px;
+color: #ffffff;
+font-style: normal;
+font-size: 26px;
+font-weight: 350;
 }
-
-.container-consejos{
-  padding: 20px;
-}
-
-/* Style media */
+.card-title-text {
+  font-size: 18px !important ;
   
+
+}
+.card-title-text{
+  font-size: 20px;
+  color: aqua;
+  
+}
+.container-consejos{
+padding: 20px;
+}
+
+.card .card-reveal{
+padding: 10px!important;
+}
+/* Style media */
+
 
 @media only screen and (max-width : 992px) {
 
 }
 
 @media only screen and (max-width: 768px) {
-  .center-mobile {
-    text-align: center;
+.center-mobile {
+  text-align: center;
+}
+.footer-color{
+  height: 100%;
+ 
+}
+.vertical-line {
+    height: 20px;
   }
-  .footer-color{
-    height: 100%;
-   
-  }
- .vertical-line {
-      height: 20px;
-    }
 
 }  
 
-
+@media (max-width: 576px) {
+  .title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .special-line {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+}

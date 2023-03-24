@@ -1,19 +1,49 @@
-.input-group-text {
-  background-color: #565ece;
-  border-color: #565ece;
+
+.search {
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.form-control:focus {
-  box-shadow: none;
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #4e00cc;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #ffffff;
 }
 
+.searchTerm:focus{
+  color: #ffffff;
+}
 .searchTerm::placeholder {
   color: white;
 }
-input[type=search]:valid {
-  color: white;
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  margin-top: 5px;
+  border: 1px solid #4b7262;
+  background: #4b7262;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
 }
 
+
+i.fa-search{
+  margin-top: 7px !important;
+}
 /* Style seacrh carrusel */
 
 .carousel .item {
@@ -23,3 +53,37 @@ input[type=search]:valid {
 .carousel{
   height: 100%;}
 
+
+
+.text-title-carrusel{
+  font-size: 20px;
+  color: blueviolet;
+  font-weight: 500px !important;
+}
+.text-description-carrusel{
+  font-size: 14px;
+  text-align: justify;
+
+}
+.text-email-carrusel{
+  font-size: 12px;
+}
+.text-href{
+  font-size: 14px;
+
+}
+.text-href{
+  color: #000000;
+  align-self: flex-start;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: 400ms all;
+  margin-right: 1rem;
+  background: #7e75c5;
+
+}
+.text-href:hover{
+  background: #9c27b0;
+  color: white;
+}

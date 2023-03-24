@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenido-tab">
+    <!-- Iniciar Sesion -->
+    <form class="form-3" action="{% url 'login:signin' %}" method="POST">
+        <img class="login-img" src="{% static 'images/inicio.png' %}">
+        <div type="text"> {% csrf_token %}</div>
+        <label for="contraseña">{{form.as_p}}</label>
+        <button type="submit">Iniciar sesión</button>
+        <p class="error-red">{{error}}</p>
+      </form>
+</div> 
+​{% endblock %}
