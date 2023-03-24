@@ -68,7 +68,7 @@
             <p class="text-icons">{{ consejo.description }}</p>
             <p class="text-icons">{{ consejo.email }}</p>
             <ul class="center-align">
-              <li><a class="text-href" href="#sabersobre-1">Saber más</a></li>
+              <li><a class="text-href" href="{% url 'detalle_consejo_local' consejo.id %}">Saber más</a></li>
             </ul>
           </div>
         </div>

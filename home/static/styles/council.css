@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .aboutusdescription {
@@ -12,7 +11,7 @@
     padding: 10px 20px 0 0;
 }
 
-.aboutusimag {
+.aboutusimage {
     border-radius: 50px;
 }
 
@@ -123,22 +122,24 @@
 .content {
    display:flex;
 }
+
 .news {
     position: relative;
 }
-.image_news{
+
+.council_image_news{
     width: 850px;
     height: 450px;
     object-fit: cover;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.46) 44%, rgba(231,56,39,0) 100%);
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.46) 44%, rgba(231,56,39,0) 100%);
 }
-.title_news { 
+.council_title_news { 
     position: relative;
     z-index: 1;
     
 }
-.title_news p { 
+.council_title_news p { 
     position: absolute;
     top: 50%;
     left: 18vw;
