@@ -54,7 +54,7 @@
       <div class="content">
         <img class=collaborator_image src="{{ collaborator.image.url }}">
         <div>
-          <h3>{{ collaborator.name }} {{ collaborator.lastname }}</h3>
+          <h3>{{ collaborator.firstname }} {{ collaborator.lastname }}</h3>
           <p>{{ collaborator.position }}</p>
         </div>
       </div>
@@ -111,8 +111,8 @@
 </div>
 <!----------- Noticia grande ------------>
 <div class="container">
-  <div class="title_news">
-    <img class="image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
+  <div class="council_title_news">
+    <img class="council_image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
     <p>{{ latest_post.title }}</p>
     <p>{{ latest_post.contenido.text | safe }}</p>
   </div>
