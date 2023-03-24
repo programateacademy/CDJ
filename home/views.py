@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Aboutus, Collaborators, Consejos, Documents
 from django.db.models import Q
 from login.models import Post
+from django.urls import reverse
 
 # traer todos los consejos al home
 
@@ -34,7 +35,7 @@ def consejos_locales(request):
 def search_consejos(request):
     query = request.GET.get('q', '')
     consejos = Consejos.objects.filter(name__icontains=query, type_consejo='Local')
-    results = [{'name': c.name, 'logo': c.logo.url, 'description': c.description, 'email': c.email, 'type_consejo': c.type_consejo} for c in consejos]
+    results = [{'name': c.name, 'logo': c.logo.url, 'description': c.description, 'email': c.email, 'type_consejo': c.type_consejo, 'id': c.id} for c in consejos]
     return JsonResponse({'results': results})
 
 #Vista para cada consejo
@@ -43,7 +44,7 @@ def detalle_consejo(request, consejo_id):
     try:
         consejo = Consejos.objects.get(id=consejo_id)
         collaborators = Collaborators.objects.filter(consejo=consejo)
-        document = Documents.objects.filter(consejo=consejo).first()
+        documents = Documents.objects.filter(consejo=consejo)
         aboutus = Aboutus.objects.filter(consejo=consejo).first()
         all_posts = Post.objects.filter(consejo=consejo)
         latest_post = all_posts.last()
@@ -57,5 +58,5 @@ def detalle_consejo(request, consejo_id):
 
     except Consejos.DoesNotExist:
         raise Http404("El consejo no existe")
-    return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'document': document,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
+    return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'documents': documents,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
 
