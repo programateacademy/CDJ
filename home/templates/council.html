@@ -20,33 +20,38 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">¡CONÓCENOS! </h2>
-      <hr class="special-line">
-      <div class="text-white">
-        <h2>{{ aboutus.name }}</h2>
-      </div>
-      <div class="aboutus">
-        <p class="aboutusdescription">{{ aboutus.description }}</p>
-        <div>
-          <img class="aboutusimage" src="{{ aboutus.image.url }}" alt="{{ consejo.name }} aboutus">
-        </div>
+      <div class="title-wrapper">
+        <h2 class="title-consejos">¡CONÓCENOS!</h2>
+        <div class="special-line"> </div>
       </div>
     </div>
   </div>
 </div>
-<br>
+<div class="container">
+  <div>
+    <h2 class="text-white">{{ aboutus.name }}</h2>
+  </div>
+  <div class="aboutus">
+    <p class="aboutusdescription">{{ aboutus.description }}</p>
+    <div>
+      <img class="aboutusimage" src="{{ aboutus.image.url }}" alt="{{ consejo.name }} aboutus">
+    </div>
+  </div>
+</div>
 
-<!--CONTAINER DE COLABORADORES-->
+
+<!--PERFIL DEL COLABORADOR-->
+
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">COLABORADORES ACTIVOS </h2>
-      <hr class="special-line">
+      <div class="title-wrapper">
+        <h2 class="title-consejos">COLABORADORES ACTIVOS</h2>
+        <div class="special-line"> </div>
+      </div>
     </div>
   </div>
 </div>
-
-<!--PERFIL DEL COLABORADOR-->
 <div class="container_colab">
   {% for collaborator in collaborators %}
   <div class="card">
@@ -70,11 +75,16 @@
 </div>
 
 <!--CONTAINER DE ACTAS Y DOCUMENTOS -->
-<section class="files_container">
-
-  <div class="document_button">
-    <h2>DOCUMENTOS</h2>
-    <div class="line_documents"></div>
+<div class="files_container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title-wrapper">
+          <h2 class="title-consejos">¡CONÓCENOS!</h2>
+          <div class="special-line"> </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="document_flex">
@@ -105,61 +115,58 @@
 
       </div>
 
-      
+
 
     </div>
     {% endfor %}
 
 
   </div>
+</div>
 
-
-
-</section>
 <!----------- Noticias y Eventos ------------>
-<div class="container news_big">
+<div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos"> EVENTOS Y NOTICIAS </h2>
-      <hr class="special-line">
+      <div class="title-wrapper">
+        <h2 class="title-consejos">EVENTOS Y NOTICIAS</h2>
+        <div class="special-line"> </div>
+      </div>
     </div>
   </div>
 </div>
-<!----------- Noticia grande ------------>
+
+{% if latest_post %}
 <div class="container">
-  <div class="council_title_news">
-    <img class="council_image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
-    <p>{{ latest_post.title }}</p>
-    <p>{{ latest_post.contenido.text | safe }}</p>
+  <div class="news">
+    <img class="image_news" src="{{ latest_post.image.url }}" alt="{{ latest_post.title }}">
+    <div class="title_news">
+      <p><a class="title-event-one" href="#sabersobre-1">{{ latest_post.title }}</a></p>
+    </div>
   </div>
-</div>
+  {% endif %}
 
+  <br>
 
-<!----------- Noticias pequeñas------------>
-<div class="container">
-  <div class="justify-content-center ">
-    {% for post in all_posts %}
-    <div class="row mx-auto mb-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
-        <div class="card">
+  <div class="justify-content-center">
+    <div class="row mx-auto mb-4 d-flex">
+      {% for post in all_posts %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3 flex-row">
+        <div class="card event h-100" id="{{ post.id }}">
           <div class="card-image">
-            <img src="{{ post.image.url }}" alt="{{ post.title }}" max-width="100%" height="250px">
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <img class="image-event" src="{{ post.image.url }}" alt="{{ post.title }}" max-width="100%" height="250px">
+            <a class="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">add</i></a>
           </div>
-          <div class="card-content">
-            <span class="card-title">{{ post.title|safe }}</span>
-            <p class="text-icons">{{ post.text|safe|truncatewords_html:30 }}</p>
+          <div class="card-content text-event d-none order-md-2">
+            <p class="text-icons">{{ post.text|safe|truncatechars_html:100 }}</p>
           </div>
-          <div class="card-reveal">
-            <span class="card-title text-icons">{{ consejo.type_consejo }}<i
-                class="material-icons right">close</i></span>
-            <p class="text-icons">{{ post.text|safe|truncatewords_html:30 }}</p>
-            <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
+          <div class="card-content title-event">
+            <span class="card-title-text event-title">{{ post.title|safe }}</span>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
 
