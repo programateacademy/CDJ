@@ -39,12 +39,12 @@ def detalle_consejo(request, consejo_id):
     try:
         consejo = Consejos.objects.get(id=consejo_id)
         collaborators = Collaborators.objects.filter(consejo=consejo)
-        document = Documents.objects.filter(consejo=consejo).first()
+        documents = Documents.objects.filter(consejo=consejo)
         aboutus = Aboutus.objects.filter(consejo=consejo).first()
         all_posts = Post.objects.filter(consejo=consejo)
         latest_post = all_posts.last()
         all_posts = all_posts.exclude(id=latest_post.id)
     except Consejos.DoesNotExist:
         raise Http404("El consejo no existe")
-    return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'document': document,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
+    return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'documents': documents,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
 

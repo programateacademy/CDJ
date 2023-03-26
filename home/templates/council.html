@@ -70,36 +70,52 @@
 </div>
 
 <!--CONTAINER DE ACTAS Y DOCUMENTOS -->
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h2 class="title-consejos"> ACTAS Y DOCUMENTOS </h2>
-      <hr class="special-line">
-    </div>
+<section class="files_container">
+
+  <div class="document_button">
+    <h2>DOCUMENTOS</h2>
+    <div class="line_documents"></div>
   </div>
-</div>
-<!--- CAJA DE ACTAS Y DOCUMENTOS -->
-<div class="container">
-  <div class="justify-content-center ">
-    <div class="row mx-auto mb-4">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
-        <div class="card hoverable white">
-          <div class="card-image waves-effect waves-block waves-light" max-width="100%">
-            <img class="activator" src="{{ consejo.logo.url }}" alt="{{ document.title }} " max-width="100%"
-              height="250px">
-          </div>
-          <div class="card-content">
-            <span class="card-title black-text text-darken-4">{{ document.title }} </span>
-          </div>
-          <div class="card-reveal">
-            <li><a class="blue-text" href="{% url 'detalle_consejo_local' consejo.id %}">Saber más</a></li>
-          </div>
-        </div>
+
+  <div class="document_flex">
+    {% for document in documents %}
+    <div class="document_container">
+
+      <div class="document_card">
+
+        <h1>{{document.title}}</h1>
+        <h2> {{document.description | safe }}</h2>
+        <p>{{document.date}}</p>
+        <a href="{{ document.pdf.url }}" target="_blank">Ver más</a>
+        {% with document.pdf.name as file_name %}
+        {% with file_name|slice:'-4:' as extension %}
+
+        {% if extension == 'docx' or extension == '.odt' %}
+        <img src="{% static 'images/doc.png' %}" alt="Docx Icon" class="extension_icon">
+        {% elif extension == '.pdf' %}
+        <img src="{% static 'images/pdf.png' %}" alt="PDF icon" class="extension_icon">
+        {% elif extension == 'xlsx' %}
+        <img src="{% static 'images/docex.png' %}" alt="Xlsx Icon" class="extension_icon">
+        {% else %}
+        <img src="{% static 'images/landing.png' %}" alt="Default Icon" class="extension_icon">
+
+        {% endif %}
+        {% endwith %}
+        {% endwith %}
+
       </div>
+
+      
+
     </div>
+    {% endfor %}
+
+
   </div>
-</div>
-</div>
+
+
+
+</section>
 <!----------- Noticias y Eventos ------------>
 <div class="container news_big">
   <div class="row">

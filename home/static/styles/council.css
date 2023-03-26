@@ -151,3 +151,167 @@
     text-shadow: 1px 1px 1px black;
     width: 350px;
 }
+.line_documents{
+    flex: 1;
+    border-top: 2px solid fuchsia;
+    margin-right: -7.5%;
+}
+
+.document_button i{
+    color: #192058;
+    font-size: 28px;
+    vertical-align: middle;
+}
+
+.document_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 280px;
+    height: 340px;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.document_container{
+    position: relative;
+    margin: 50px;
+}
+
+.extension_icon{ 
+    width: 280px;
+    height: 320px;
+}
+
+.document_card{
+    background: #192058;
+    height: 340px;
+    width: 300px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all .40s;
+} 
+
+.document_card:hover{
+    background-color: #fff;
+
+}
+
+.document_card:hover .extension_icon{
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all .3s ease-out;
+}
+
+.document_card h1{
+    position: absolute;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 500;
+    color: #192058;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .40s;
+}
+
+.document_card:hover h1{
+    bottom: 70%;
+    opacity: 1;
+}
+
+.document_card h2{
+    position: absolute;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    color: #192058;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .40s;
+}
+
+.document_card:hover h2{
+    bottom: 50%;
+    opacity: 1;
+}
+
+.document_card p{
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color:#192058;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .40s;
+}
+
+.document_card:hover p{
+    bottom: 40%;
+    opacity: 1;
+}
+
+.document_card a{
+    background: #192058;
+    text-decoration: none;
+    position: absolute;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    bottom: 0;
+    z-index: 1;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .40s;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.document_card:hover a{
+    bottom: 12%;
+    opacity: 1;
+} 
+
+.document_flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.document_options a:first-child{
+    background: red;
+    padding: 10px 24px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 16;
+    text-decoration: none;
+    margin: 2rem 0 0;
+}
+
+.document_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.files_container{
+    margin: 3rem 0;
+} 
