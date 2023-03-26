@@ -1,9 +1,9 @@
 .aboutus {
     display: flex;
     align-items: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom:35px;
+    margin-bottom: 35px;
 }
 
 .aboutusdescription {
@@ -29,65 +29,66 @@
 
     .text-white>h2 {
         text-align: center;
-	}
+    }
 }
-.container_colab{
+
+.container_colab {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.container_colab .card3{
+.container_colab .card3 {
     position: relative;
     cursor: pointer;
-	background-color: transparent;
-	border: 0;
+    background-color: transparent;
+    border: 0;
 }
 
-.container_colab .card3 .face{
+.container_colab .card3 .face {
     width: 300px;
     height: 200px;
     transition: 0.5s;
 }
 
-.container_colab .card3 .face.face1{
+.container_colab .card3 .face.face1 {
     position: relative;
     background: #333;
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
     transform: translateY(100px);
 }
 
-.container_colab .card3:hover .face.face1{
+.container_colab .card3:hover .face.face1 {
     background: #FC45FF;
     transform: translateY(0);
 }
 
-.container_colab .card3 .face.face1 .content{
+.container_colab .card3 .face.face1 .content {
     opacity: 0.2;
     transition: 0.5s;
 }
 
-.container_colab .card3:hover .face.face1 .content{
+.container_colab .card3:hover .face.face1 .content {
     opacity: 1;
 }
 
-.container_colab .card3 .face.face1 .content img{
+.container_colab .card3 .face.face1 .content img {
     max-width: 150px;
     height: 200px;
 }
 
 .container_colab .card3 .face.face1 .content div {
-    margin: 10px 0 0;
-    padding: 0;
     color: #fff;
     text-align: center;
     font-size: 1.5em;
+    width: 100%;
+    margin-top: 25px;
+    text-transform:capitalize;
 }
 
-.container_colab .card3 .face.face2{
+.container_colab .card3 .face.face2 {
     position: relative;
     background: #fff;
     display: flex;
@@ -99,49 +100,53 @@
     transform: translateY(-100px);
 }
 
-.container_colab .card3:hover .face.face2{
+.container_colab .card3:hover .face.face2 {
     transform: translateY(0);
 }
 
-.container_colab .card3 .face.face2 .content p{
+.container_colab .card3 .face.face2 .content p {
     margin: 0;
     padding: 0;
 }
 
-.container_colab .card3 .face.face2 .content a{
+.container_colab .card3 .face.face2 .content a {
     margin: 15px 0 0;
-    display:  inline-block;
+    display: inline-block;
     text-decoration: none;
     font-weight: 900;
     color: #333;
     padding: 5px;
     border: 1px solid #333;
 }
-.container_colab .card3 .face.face2 .content a:hover{
+
+.container_colab .card3 .face.face2 .content a:hover {
     background: #333;
     color: #fff;
 }
+
 .content {
-   display:flex;
+    display: flex;
 }
 
 .news {
     position: relative;
 }
 
-.council_image_news{
+.council_image_news {
     width: 850px;
     height: 450px;
     object-fit: cover;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.46) 44%, rgba(231,56,39,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.46) 44%, rgba(231,56,39,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.46) 44%, rgba(231, 56, 39, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.46) 44%, rgba(231, 56, 39, 0) 100%);
 }
-.council_title_news { 
+
+.council_title_news {
     position: relative;
     z-index: 1;
-    
+
 }
-.council_title_news p { 
+
+.council_title_news p {
     position: absolute;
     top: 50%;
     left: 18vw;
@@ -153,4 +158,3 @@
     text-shadow: 1px 1px 1px black;
     width: 350px;
 }
-

@@ -59,16 +59,29 @@
       <div class="content">
         <img class=collaborator_image src="{{ collaborator.image.url }}">
         <div>
+
           <h3>{{ collaborator.firstname }} {{ collaborator.lastname }}</h3>
           <p>{{ collaborator.position }}</p>
+
+
         </div>
       </div>
     </div>
     <div class="face face2">
-      <div class="content">
-        <p>{{ collaborator.description }}
-          
-        </p>
+      <div >
+        <div class="collaborator_social">
+          <p>{{ collaborator.description }}</p>
+          {% if collaborator.facebook %}
+          <a href="{{ collaborator.facebook }}"> <img src="{% static 'images/facebook.svg'%}" alt="Facebook Icon"> </a>
+          {% endif %}
+          {% if collaborator.instagram %}
+          <a href="{{ collaborator.instagram }}"> <img src="{% static 'images/instagram.svg'%}" alt="Instagram Icon">
+          </a>
+          {% endif %}
+          {% if collaborator.twitter %}
+          <a href="{{ collaborator.twitter }}"> <img src="{% static 'images/twitter.svg'%}" alt="Twitter Icon"> </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -113,15 +126,9 @@
         {% endif %}
         {% endwith %}
         {% endwith %}
-
       </div>
-
-
-
     </div>
     {% endfor %}
-
-
   </div>
 </div>
 
