@@ -80,6 +80,7 @@
 </div>
 <!--- CAJA DE ACTAS Y DOCUMENTOS -->
 <div class="container">
+  {% for document in documents%}
   <div class="justify-content-center ">
     <div class="row mx-auto mb-4">
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
@@ -98,6 +99,7 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 </div>
 </div>
 <!----------- Noticias y Eventos ------------>
@@ -111,11 +113,13 @@
 </div>
 <!----------- Noticia grande ------------>
 <div class="container">
+  {% if latest_post %}
   <div class="council_title_news">
     <img class="council_image_news" src="{{ latest_post.image.url }}" alt="{{ consejos.name }}">
     <p>{{ latest_post.title }}</p>
-    <p>{{ latest_post.contenido.text | safe }}</p>
+    <p>{{ latest_post.contenido.subtitle | safe }}</p>
   </div>
+  {% endif %}
 </div>
 
 
@@ -132,7 +136,7 @@
           </div>
           <div class="card-content">
             <span class="card-title">{{ post.title|safe }}</span>
-            <p class="text-icons">{{ post.text|safe|truncatewords_html:30 }}</p>
+            <p class="text-icons">{{ post.subtitle|safe|truncatewords_html:30 }}</p>
           </div>
           <div class="card-reveal">
             <span class="card-title text-icons">{{ consejo.type_consejo }}<i

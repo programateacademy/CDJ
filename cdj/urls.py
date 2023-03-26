@@ -19,6 +19,10 @@ from home import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+from django.contrib.auth.decorators import login_required
+from ckeditor_uploader.views import upload
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -26,6 +30,7 @@ urlpatterns = [
     path('login/', include('login.urls', namespace="login")),
     path('search_consejos/', views.search_consejos, name='search_consejos'),
     path('consejos/<int:consejo_id>/', views.detalle_consejo, name='detalle_consejo_local'),
+    path(r'^ckeditor/upload/', login_required(upload), name='ckeditor_upload')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
