@@ -6,7 +6,7 @@ from home.models import Documents, Banner, Aboutus, Collaborators
 class PostForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'image', 'text']
+        fields = ['title', 'image', 'subtitle','text']
 
 class DocumentForm(ModelForm):
     class Meta:
