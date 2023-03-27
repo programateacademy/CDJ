@@ -42,7 +42,7 @@
     border-radius: 25px;
     color: white;
     text-decoration: none;
-    margin: 2rem 0 0;
+    margin: 2em 1em ;
 }
 
 .collaborator_options a:last-child{
@@ -51,7 +51,7 @@
     border-radius: 25px;
     color: white;
     text-decoration: none;
-    margin: 2rem 0 0;
+    margin: 2em 1em;
 }
 
 .collaborator_container{
@@ -63,7 +63,7 @@
 
 .collaborator_options{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
