@@ -26,6 +26,8 @@ urlpatterns = [
     path('login/', include('login.urls', namespace="login")),
     path('search_consejos/', views.search_consejos, name='search_consejos'),
     path('consejos/<int:consejo_id>/', views.detalle_consejo, name='detalle_consejo_local'),
+    path('post/<int:post_id>/', views.post, name='detalle_noticias'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
