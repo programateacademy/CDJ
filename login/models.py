@@ -5,9 +5,10 @@ from home.models import Consejos
 from django.contrib.auth.models import User
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=50)
     image = models.FileField(upload_to="consejos/post/")
-    text = RichTextUploadingField(max_length=200)
+    subtitle = models.TextField(max_length=75, null=True)
+    text = RichTextUploadingField()
     consejo = models.ForeignKey(Consejos,null=True,blank= True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.PROTECT, default="")
 

@@ -1,5 +1,6 @@
 const searchBox = document.querySelector('#search-box');
 const searchResults = document.querySelector('#search-results');
+
 let allCards = [];
 
 function createCard(result) {
@@ -16,17 +17,20 @@ function createCard(result) {
       <p class="text-description-carrusel">${result.description.slice(0, 100)}</p>
       <p class="text-email-carrusel ">${result.email}</p>
       <ul class="center-align">
-        <li><a class="text-href" href="#sabersobre-1">Saber más</a></li>
+        <li><a class="text-href" href="consejos/${parseInt(result.id)}">Saber más</a></li>
       </ul>
     </div>
   </div>
   </div>
   `;
+
   const item = document.createElement('div');
   item.classList.add('item');
   item.innerHTML = card;
   return item;
 }
+
+
 
 // Función para buscar las cartas
 function searchCards(query) {

@@ -9,9 +9,8 @@
       </a>
       <a style="text-decoration: none;" href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <a style="text-decoration: none;"  href="#" data-target="search-demo" class="sidenav-trigger right"><i class="material-icons">search</i></a><ul class="right hide-on-med-and-down" style="padding-top: 10px;">
-        <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
+        <li><a class="link nav-link white-text" href="/">Inicio</a></li>
         <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
-        <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
         <li>
           <a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
           <ul id="dropdown1" class="nav-link dropdown-content aligned"  style="width:200px">
@@ -53,37 +52,33 @@
 <ul id="mobile-demo" class="sidenav sidenav-close left">
   <br>
   <li>
-    <div class="nav-icon">
-      <i class="material-icons  icono-style  icono white-text">home</i>
-    </div>
     <div class="nav-text">
-      <a class="white-text nav-link" style="text-decoration: none;" href="#inicio">ExampleExample</a>
+      <a class="white-text nav-link" style="text-decoration: none;" href="/">Inicio</a>
     </div>
   </li>
   <li>
-    <div class="nav-icon">
-      <i class="material-icons icono-style icono white-text">work</i>
-    </div>
-    <div class="nav-text">
-      <a class="white-text nav-link" style="text-decoration: none;" href="#sobremi">Example</a>
-    </div>
-  </li>
-  <li>
-    <div class="nav-icon">
-      <i class="material-icons  icono-style  icono white-text">layers</i>
-    </div>
     <div class="nav-text">
       <a class="white-text nav-link" style="text-decoration: none;" href="#proyectos">Example</a>
     </div>
   </li>
+  {% if user.is_authenticated %}
   <li>
-    <div class="nav-icon">
-      <i class="material-icons icono-style  icono white-text">perm_media</i>
-    </div>
     <div class="nav-text">
-      <a class="white-text nav-link" style="text-decoration: none;" href="#conocimientos">Example</a>
+      <a class="white-text nav-link" style="text-decoration: none;" href="{% url 'login:panel_admin' %}">Panel</a>
     </div>
   </li>
+  <li>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="{% url 'login:logout' %}">Cerrar Sesión</a>
+    </div>
+  </li>
+  {% else %}
+  <li>
+    <div class="nav-text">
+      <a class="white-text nav-link" style="text-decoration: none;" href="{% url 'login:signin' %}">Iniciar Sesión</a>
+    </div>
+  </li>
+  {% endif %}
 </ul>
 
 

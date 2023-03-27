@@ -8,9 +8,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'roboto';
+  font-family: 'Roboto';
   font-size: medium;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   flex-shrink: 0
 
@@ -24,6 +24,18 @@ box-sizing: border-box;
 margin: 0%;
 padding: 0px;
 border: 0px;
+}
+
+.banner_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.banner_home{
+  width: 1200px;
+  height: 600px;
 }
 
 
@@ -47,6 +59,7 @@ margin-top: 2REM;
   .title-consejos {
     text-align: left;
   }
+  
   .special-line {
     flex-grow: 1;
     margin-left: 20px;
@@ -86,6 +99,11 @@ padding: 10px!important;
 
 
 @media only screen and (max-width : 992px) {
+  .banner_home{
+    width: 800px;
+    height: 400px;
+  }
+  
 
 }
 
@@ -99,7 +117,12 @@ padding: 10px!important;
 }
 .vertical-line {
     height: 20px;
-  }
+}
+
+.banner_home{
+  width: 650px;
+  height: 375px;
+}
 
 }  
 
@@ -112,5 +135,10 @@ padding: 10px!important;
     margin-left: 0;
     margin-top: 10px;
     width: 100%;
+  }
+
+  .banner_home{
+    width: 400px;
+    height: 200px;
   }
 }

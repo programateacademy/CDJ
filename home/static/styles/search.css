@@ -21,7 +21,7 @@
 }
 
 .searchTerm:focus{
-  color: #420e52;
+  color: #ffffff;
 }
 .searchTerm::placeholder {
   color: white;
