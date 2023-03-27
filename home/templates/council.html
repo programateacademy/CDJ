@@ -59,11 +59,8 @@
       <div class="content">
         <img class=collaborator_image src="{{ collaborator.image.url }}">
         <div>
-
           <h3>{{ collaborator.firstname }} {{ collaborator.lastname }}</h3>
           <p>{{ collaborator.position }}</p>
-
-
         </div>
       </div>
     </div>
@@ -166,7 +163,7 @@
             <a class="btn-floating halfway-fab waves-effect waves-light purple"><i class="material-icons">add</i></a>
           </div>
           <div class="card-content text-event d-none order-md-2">
-            <p class="text-icons">{{ post.text|safe|truncatechars_html:100 }}</p>
+            <p class="text-icons">{{ post.subtitle|safe }}</p>
           </div>
           <div class="card-content title-event">
             <span class="card-title-text event-title">{{ post.title|safe }}</span>

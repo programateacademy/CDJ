@@ -133,3 +133,26 @@ SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_ALLOW_NONIMAGE_FILES = False 
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_REQUIRE_STAFF=False
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '90%',
+        'height': 300,
+        'resize_enabled': False,
+        'extraPlugins': ','.join([
+            'autogrow',
+            'autoembed',
+        ]),
+        'autoGrow_onStartup': True,
+        'autoGrow_minHeight': 280,
+        'autoGrow_maxHeight': 600,
+        'autoEmbed_widget': 'embedSemantic',
+        'autoEmbed_maxWidth': 800,
+        'autoEmbed_ratio': '4:3',
+    }
+}
