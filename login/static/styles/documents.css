@@ -129,6 +129,12 @@
     border-radius: 25px;
 }
 
+.document_card a:hover{
+    background: white;
+    color: #192058;
+    border: 2px solid #192058;
+}
+
 .document_card:hover a{
     bottom: 12%;
     opacity: 1;
