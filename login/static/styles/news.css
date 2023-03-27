@@ -26,8 +26,8 @@
 }
 
 .post_card img{
-    max-width: 100%;
-    height: auto;
+    width: 200px;
+    height: 230px;
     padding-right: 10px; 
     padding-left: 10px; 
 }
