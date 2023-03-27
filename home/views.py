@@ -60,3 +60,10 @@ def detalle_consejo(request, consejo_id):
         raise Http404("El consejo no existe")
     return render(request, 'council.html', {'consejo': consejo, 'collaborators': collaborators, 'documents': documents,'aboutus':aboutus,'latest_post': latest_post,'all_posts': all_posts})
 
+# Vista para las noticias
+def post(request, post_id):
+    try:
+        post = Post.objects.get(id=post_id)
+    except Post.DoesNotExist:
+        raise Http404("La noticia no existe")
+    return render(request, 'news.html', {'post': post})

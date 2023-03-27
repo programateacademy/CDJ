@@ -110,15 +110,12 @@
     <div class="banner_flex">
         {% for banner in banners %}
         <div class="banner_container">
-
             <div class="banner_card">
                 <img src="{{ banner.image.url }}" alt="Banner Image">
             </div>
-
             <div class="banner_options">
                 <a href="{% url 'login:delete_banner' banner.id %}"> Eliminar</a>
             </div>
-
         </div>
 
         {% endfor %}
@@ -160,53 +157,59 @@
 
 </section>
 
-
+<!--Colaborador -->
 <section class="info_collaborators_container">
 
-    <div class="collaborators_button">
-        <h2>Colaboradores</h2>
+    <div class="about_button">
+        <h2>COLABORADORES</h2>
+        <div class="line_about"></div>
         <a href="{% url 'login:create_collaborator' %}">
             Agregar
-            <img src="{% static 'images/add.svg' %}" alt="Add ICON">
+            <i class='bx bxs-plus-circle'></i>
         </a>
     </div>
 
-    <div class="collaborators_flex">
+    <div class="container_colab collaborators_flex
+    ">
         {% for collaborator in collaborators %}
-        <div class="collaborator_container">
-
-            <div class="collaborator_card">
-
-                <img src="{{ collaborator.image.url }}" alt="Collaborator Profile Image">
-                <h2>{{ collaborator.firstname}}</h2>
-                <h2>{{ collaborator.lastname}}</h2>
-                <h2>{{ collaborator.position}}</h2>
-                <h2>{{ collaborator.description}}</h2>
-
-                <div class="collaborator_social">
-                    {% if collaborator.facebook %}
-                    <a href="{{ collaborator.facebook }}"> <img src="{% static 'images/facebook.svg'%}" alt="Facebook Icon"> </a>
-                    {% endif %}
-                    {% if collaborator.instagram %}
-                    <a href="{{ collaborator.instagram }}"> <img src="{% static 'images/instagram.svg'%}" alt="Instagram Icon"> </a>
-                    {% endif %}
-                    {% if collaborator.twitter %}
-                    <a href="{{ collaborator.twitter }}"> <img src="{% static 'images/twitter.svg'%}" alt="Twitter Icon"> </a>
-                    {% endif %}
+        <div class="card3">
+            <div class="face face1">
+                <div class="content">
+                    <img class=collaborator_image src="{{ collaborator.image.url }}">
+                    <div>
+                        <h3>{{ collaborator.firstname }} {{ collaborator.lastname }}</h3>
+                        <p>{{ collaborator.position }}</p>
+                    </div>
                 </div>
-
             </div>
-
+            <div class="face face2">
+                <div>
+                    <div class="collaborator_social">
+                        <p>{{ collaborator.description }}</p>
+                        {% if collaborator.facebook %}
+                        <a href="{{ collaborator.facebook }}"> <img src="{% static 'images/facebook.svg'%}"
+                                alt="Facebook Icon"> </a>
+                        {% endif %}
+                        {% if collaborator.instagram %}
+                        <a href="{{ collaborator.instagram }}"> <img src="{% static 'images/instagram.svg'%}"
+                                alt="Instagram Icon">
+                        </a>
+                        {% endif %}
+                        {% if collaborator.twitter %}
+                        <a href="{{ collaborator.twitter }}"> <img src="{% static 'images/twitter.svg'%}"
+                                alt="Twitter Icon"> </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
             <div class="collaborator_options">
                 <a href="{% url 'login:delete_collaborator' collaborator.id %}"> Eliminar</a>
                 <a href="{% url 'login:update_collaborator' collaborator.id %}"> Actualizar</a>
             </div>
-
-
         </div>
         {% endfor %}
-
     </div>
+
 
 
 </section>

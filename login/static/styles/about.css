@@ -1,66 +1,64 @@
 /* INFORMACIÓN DEL CONSEJO */
 
-.line_about{
+.line_about {
     flex: 1;
     border-top: 2px solid fuchsia;
     margin-right: -7.5%;
 }
 
-.about_button i{
+.about_button i {
     color: #192058;
     font-size: 28px;
     vertical-align: middle;
 }
 
-.about_card{
+.about_card {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 800px; 
-    height: 450px;
+    width: 800px;
+    height: max-content;
     background: white;
     border-radius: 25px;
     margin-bottom: 2rem;
     margin-top: 3rem;
 }
 
-.about_card img{
-    width: 400px;
-    height: 100%;
-    margin-left: 20px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-} 
+.about_card img {
+    width: 100%;
+    border-radius: 22px;  
+}
 
-.about_flex{
+.about_flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
-    
-.info_consejo_container{
+
+.info_consejo_container {
     margin: 3rem 0;
 }
 
-.about_card h2{
+.about_card h2 {
     font-size: 32px;
     font-weight: 600;
     text-align: left;
     margin-left: 40px;
     margin-top: 20px;
 }
-    
-.about_card p{
+
+.about_card p {
+    text-align: justify;
     font-size: 16px;
     font-weight: 400;
-    max-height: 320px; 
-    margin-bottom: 2rem; 
-    margin-top: 1rem; 
+    max-height: 320px;
+    margin: 0 4em 2em 2em;
 }
-    
-.about_options a{
+
+.about_options a {
     background: rgb(74, 148, 218);
     padding: 10px 20PX;
     border-radius: 25px;
@@ -71,17 +69,34 @@
     font-weight: 500;
 
 }
-    
-.about_options a:hover{
+
+.about_options a:hover {
     background: white;
     color: rgb(74, 148, 218);
     transition: all 0.3s ease-in-out;
 }
 
-.about_card div{
+.about_card div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+    .about_card {
+        width: 350px;
+        flex-direction: column;
+    }
+
+    .about_card p {
+        font-size: 14px;
+        max-height: 320px;
+        max-width: 300px;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+    }
+    .about_card img {
+        width: 350px;}
 }
