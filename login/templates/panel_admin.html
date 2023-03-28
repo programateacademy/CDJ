@@ -4,15 +4,21 @@
 {% block content %}
 
 {% comment %} SECCIÓN DE NOTICIAS {% endcomment %}
-
-<section class="news_container">
-    <div class="post_button">
-        <h2>NOTICIAS</h2>
-        <div class="line_news"></div>
-        <a href="{% url 'login:create_post'%}">
-            Agregar
+<section class="container">
+    <br>
+    <div class="row">
+        <div class="col">
+          <div class="title-wrapper">
+            <h2 class="title-consejos">NOTICIAS</h2>
+            <div class="special-line"> </div>
+          </div>
+        </div>
+        <div class="add_button ml-auto">
+            <a href="{% url 'login:create_post'%}">
+             Agregar
             <i class='bx bxs-plus-circle'></i>
-        </a>
+          </a>
+        </div>
     </div>
 
     <div class="post_flex">
@@ -26,8 +32,10 @@
             </div>
 
             <div class="post_options">
-                <a href="{% url 'login:delete_post' post.id %}">Eliminar</a>
-                <a href="{% url 'login:update_post' post.id %}">Editar</a>
+                <div class="options_container">
+                    <a href="{% url 'login:delete_post' post.id %}">Eliminar</a>
+                    <a href="{% url 'login:update_post' post.id %}">Editar</a>
+                </div>
             </div>
 
         </div>
@@ -41,15 +49,20 @@
 
 {% comment %} SECCIÓN DOCUMENTOS {% endcomment %}
 
-<section class="files_container">
-
-    <div class="document_button">
-        <h2>DOCUMENTOS</h2>
-        <div class="line_documents"></div>
-        <a href="{% url 'login:create_document' %}">
+<section class="container">
+    <div class="row">
+        <div class="col">
+          <div class="title-wrapper">
+            <h2 class="title-consejos">DOCUMENTOS</h2>
+            <div class="special-line"> </div>
+          </div>
+        </div>
+        <div class="add_button ml-auto">
+           <a href="{% url 'login:create_document' %}">
             Agregar
             <i class='bx bxs-plus-circle'></i>
-        </a>
+          </a>
+        </div>
     </div>
 
     <div class="document_flex">
@@ -96,16 +109,22 @@
 
 {% comment %} SECCIÓN BANNER {% endcomment %}
 
-<section class="images_container">
-
-    <div class="banner_button">
-        <h2>BANNER</h2>
-        <div class="line_banner"></div>
-        <a href="{% url 'login:create_banner' %}">
+<section class="container">
+    <div class="row">
+        <div class="col">
+          <div class="title-wrapper">
+            <h2 class="title-consejos">BANNER</h2>
+            <div class="special-line"> </div>
+          </div>
+        </div>
+        <div class="add_button ml-auto">
+          <a href="{% url 'login:create_banner' %}">
             Agregar
             <i class='bx bxs-plus-circle'></i>
-        </a>
+          </a>
+        </div>
     </div>
+    <br>
 
     <div class="banner_flex">
         {% for banner in banners %}
@@ -125,15 +144,21 @@
 
 {% comment %} INFORMACIÓN DEL CONSEJO {% endcomment %}
 
-<section class="info_consejo_container">
+<section class="container">
+    <div class="row">
+        <div class="col">
+          <div class="title-wrapper">
+            <h2 class="title-consejos">INFORMACION CONSEJO</h2>
+            <div class="special-line"> </div>
+          </div>
+        </div>
+        <div class="add_button ml-auto">
+          <a href="{% url 'login:create_about' %}">
 
-    <div class="about_button">
-        <h2>INFORMACIÓN CONSEJO</h2>
-        <div class="line_about"></div>
-        <a href="{% url 'login:create_about' %}">
             Agregar
             <i class='bx bxs-plus-circle'></i>
-        </a>
+          </a>
+        </div>
     </div>
 
     <div class="about_flex">
@@ -158,15 +183,20 @@
 </section>
 
 <!--Colaborador -->
-<section class="info_collaborators_container">
-
-    <div class="about_button">
-        <h2>COLABORADORES</h2>
-        <div class="line_about"></div>
-        <a href="{% url 'login:create_collaborator' %}">
+<section class="container">
+    <div class="row">
+        <div class="col">
+          <div class="title-wrapper">
+            <h2 class="title-consejos">COLABORADORES</h2>
+            <div class="special-line"> </div>
+          </div>
+        </div>
+        <div class="add_button ml-auto">
+          <a href="{% url 'login:create_collaborator' %}">
             Agregar
             <i class='bx bxs-plus-circle'></i>
-        </a>
+          </a>
+        </div>
     </div>
 
     <div class="container_colab collaborators_flex
@@ -203,15 +233,14 @@
                 </div>
             </div>
             <div class="collaborator_options">
+                <div class="options_container">
                 <a href="{% url 'login:delete_collaborator' collaborator.id %}"> Eliminar</a>
                 <a href="{% url 'login:update_collaborator' collaborator.id %}"> Actualizar</a>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
-
-
-
 </section>
-
+<br>
 {% endblock %}

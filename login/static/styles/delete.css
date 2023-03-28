@@ -1,3 +1,4 @@
+
 .post_delete{
     text-align: center;
     display: flex;
@@ -14,7 +15,6 @@ h2{
     justify-content: center;
     margin-bottom: 20px;
     color: #000;
-
 }
   
 h2 i{
@@ -25,23 +25,22 @@ h2 i{
 }
   
 .btn_delete{
-    background-color: red;
-    color: white;
-    border: none;
+    background: rgb(223, 55, 55);
     padding: 10px 20px;
-    margin-top: 20px;
-    transition: 0.5s;
     border-radius: 25px;
-    margin-right: 20px;
-    font-weight: 600;
-    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin: 2rem 0 0;
+    font-weight: 500;
 }
   
 .btn_delete:hover{
-    background-color: #bf0000;
+    background: red;
+    color: white;
+    transition: all 0.3s ease-in-out;
 }
   
-form a{
+.buttom-back{
     background-color: blue;
     color: white;
     padding: 10px 30px;
@@ -50,17 +49,15 @@ form a{
     display: inline-block;
     font-size: 18px;
     font-weight: 600;
-    margin: 4px 2px;
+    margin: 2px 2px;
     cursor: pointer;
     border-radius: 25px;
 }
       
-form a:hover{
+.buttom-back:hover{
     background-color: white;
-    border: 2px solid blue;
     color: blue;
 }
       
-
 
    

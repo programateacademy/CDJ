@@ -26,24 +26,23 @@ padding: 0px;
 border: 0px;
 }
 
-.banner_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
 
 .banner_home{
   width: 1200px;
   height: 600px;
 }
 
-
+.banner_container_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
 
 /* Style inicio */
 
 .home{
-margin-top: 2REM;
+  margin-top: 2rem;
 }
 
 
@@ -64,7 +63,7 @@ margin-top: 2REM;
     flex-grow: 1;
     margin-left: 20px;
     border: none;
-    border-top: 4px solid #FC45FF!important;
+    border-top: 2px solid fuchsia;
   }
   
   
@@ -73,10 +72,9 @@ margin-top: 2REM;
   /* Style consejos and all acard */
 
 .title-consejos{
-color: #ffffff;
-font-style: normal;
-font-size: 26px;
-font-weight: 350;
+  font-size: 32px;
+  font-weight: 400;
+  color: #ffff;
 }
 .card-title-text {
   font-size: 18px !important ;
