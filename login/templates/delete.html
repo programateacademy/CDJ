@@ -8,7 +8,7 @@
         {% csrf_token %}
         <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar "{{post.title}}"?</h2>
         <input type="submit" value="Sí, eliminar" class="btn_delete">
-        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+        <a class="buttom-back" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
 {% endif %}
@@ -21,7 +21,7 @@
         {% csrf_token %}
         <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar "{{document.title}}"?</h2>
             <input type="submit" value="Sí, eliminar" class="btn_delete">
-        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+        <a class="buttom-back" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
 
@@ -34,7 +34,7 @@
         {% csrf_token %}
         <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar la imagen del Banner?</h2>
             <input type="submit" value="Sí, eliminar" class="btn_delete">
-        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+        <a class="buttom-back" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
 
@@ -47,7 +47,7 @@
         {% csrf_token %}
         <h2><i class='bx bxs-error'></i>¿Seguro que deseas eliminar {{ collaborator.firstname }} {{collaborator.lastname}}?</h2>
         <input type="submit" value="Sí, eliminar" class="btn_delete">
-        <a type="buttom" href="{% url 'login:panel_admin' %} ">Volver</a>
+        <a class="buttom-back" href="{% url 'login:panel_admin' %} ">Volver</a>
     </form>
 </div>
 

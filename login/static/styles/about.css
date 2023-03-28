@@ -1,12 +1,8 @@
 /* INFORMACIÓN DEL CONSEJO */
 
-.line_about {
-    flex: 1;
-    border-top: 2px solid fuchsia;
-    margin-right: -7.5%;
-}
 
-.about_button i {
+
+.add_button i {
     color: #192058;
     font-size: 28px;
     vertical-align: middle;
@@ -17,12 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 800px;
     height: max-content;
     background: white;
     border-radius: 25px;
     margin-bottom: 2rem;
-    margin-top: 3rem;
 }
 
 .about_card img {
@@ -36,11 +30,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
 
-}
-
-.info_consejo_container {
-    margin: 3rem 0;
 }
 
 .about_card h2 {

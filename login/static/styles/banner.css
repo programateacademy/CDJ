@@ -1,19 +1,9 @@
-.line_banner{
-    flex: 1;
-    border-top: 2px solid fuchsia;
-    margin-right: -7.5%;
-}
 
 .banner_button i{
     color: #192058;
     font-size: 28px;
     vertical-align: middle;
 }
-
-.images_container{
-    margin: 3rem 0;
-}
-
 .banner_card img{
     width: 100%;
     height: auto;
@@ -21,35 +11,52 @@
 }
 
 .banner_options a:first-child{
-    display: block;
-    background: red;
-    padding: 10px 24px;
+    background: rgb(223, 55, 55);
+    padding: 10px 20px;
     border-radius: 25px;
     color: white;
-    font-weight: 500;
-    font-size: 16;
     text-decoration: none;
     margin: 2rem 0 0;
+    font-weight: 500;
 }
-
-.banner_flex{
-    justify-content: space-evenly;
+.banner_options a:first-child:hover{
+    background: red;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.banner_flex {
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
+  }
+  
+  .banner_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .banner_options {
+    margin-top: 10px;
+  }
+  
+  .banner_options a {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
 
 .banner_card{
     width: 320px;
     height: 230px;
     margin-top: 12px;
-}
-
-.banner_container{
-    width: 100%;
-    margin: 6em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 

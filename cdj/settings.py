@@ -31,17 +31,32 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
+    'ckeditor_uploader',    
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', 
     'home',
     'login',
-    'ckeditor',
-    'ckeditor_uploader'
+
 ]
+
+#Jazzmin django admin styles
+JAZZMIN_SETTINGS = {
+    "site_logo": "images/logo-login2.png",
+    "login_logo": "images/logo-login.png",
+    "welcome_sign": "Bienvenidos",
+    'site_title': 'CDJ',
+    "site_header": "CDJ",
+}   
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "materia",
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,8 +1,4 @@
-.line_documents{
-    flex: 1;
-    border-top: 2px solid fuchsia;
-    margin-right: -7.5%;
-}
+
 
 .document_button i{
     color: #192058;
@@ -148,15 +144,20 @@
 }
 
 .document_options a:first-child{
-    background: red;
-    padding: 10px 24px;
+    background: rgb(223, 55, 55);
+    padding: 10px 20px;
     border-radius: 25px;
     color: white;
-    font-weight: 500;
-    font-size: 16;
     text-decoration: none;
     margin: 2rem 0 0;
+    font-weight: 500;
 }
+.document_options a:first-child:hover{
+    background: red;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
 
 .document_container{
     display: flex;
@@ -164,7 +165,3 @@
     align-items: center;
     flex-direction: column;
 }
-
-.files_container{
-    margin: 3rem 0;
-} 
