@@ -43,6 +43,13 @@ Este proyecto fue desarrollado en *Django* ya que es un framework web de alto ni
 
 Por ejemplo, si quieres instalar la dependencia Django, debes ejecutar el siguiente comando: *pip install django*
 
+debes ejecutar el siguiente comando: pip install -U django-jazzmin
+
+### Debes poner a correr el servidor
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
 ## Recuerda:
 
 Es importante verificar que tu entorno virtual esté activado antes de instalar las dependencias. Si necesitas más información o ayuda, puedes consultar la documentación de pip o buscar recursos adicionales en línea.
